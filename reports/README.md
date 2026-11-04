@@ -6,4 +6,4 @@
 
 报告中的运行状态、速度和时间均为对应实验时的记录；当前服务状态需按各报告中的检查命令确认。权重、构建产物和大体积运行日志不纳入本目录。
 
-社区分享准备：[43 层 MXFP4 CPU 专家 GGUF 候选包与完整审计](2026-11-04-taishan-deepseek-v4-flash/community-release/README.md)。当前为未发布草稿，完整审计在服务器后台运行。
+社区分享准备：[43 层 MXFP4 CPU 专家 GGUF 与完整审计](2026-11-04-taishan-deepseek-v4-flash/community-release/README.md)。2026-11-04 11:15 完整审计通过，魔搭上传进行中，GitHub 文档 PR 等待上传验收。

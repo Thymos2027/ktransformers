@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "tested_at": "2026-11-04T11:15:15+08:00",
+  "probe": "17 + 25",
+  "answer": "42",
+  "usage": {
+    "prompt_tokens": 17,
+    "total_tokens": 19,
+    "completion_tokens": 2,
+    "prompt_tokens_details": null,
+    "reasoning_tokens": 0
+  }
+}

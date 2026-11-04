@@ -89,7 +89,7 @@ bash "$KTRANSFORMERS_REPO/kt-kernel/tools/ascend_dsv4/serve.sh" --foreground
 ## 验证状态与限制
 
 <!-- AUDIT_STATUS_BEGIN -->
-**FULL_AUDIT_PENDING：发布准备中。** 已通过 43 文件大小检查、第 0/14/28 层各 4 个专家的 bit-exact 抽查，以及模型加载/生成。全部 43 层 × 256 专家 × 3 投影的完整校验及 SHA-256 清单正在补做；尚不能称为发布就绪。
+**完整审计通过，候选包待发布审阅。** 全部 43 层 × 256 专家 × 3 投影（33,024 个专家投影）通过编码/缩放字节比较及上游逐元素 bit-exact 验证；43 个 GGUF 的 SHA-256 已独立重读复核。审计后实际聊天测试仍正常。详见 `validation/full-audit.json`。
 <!-- AUDIT_STATUS_END -->
 
 模型加载、NPU decode 图捕获、`/health`、`/health_generate`、聊天及 SSE 流式均通过。中文首都问答返回“巴黎”，`17 + 25` 返回 `42`，单词指令返回 `READY` 并收到流式结束标记，见 `validation/runtime-validation.json`。
