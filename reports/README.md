@@ -5,3 +5,5 @@
 | 2026-11-04 | [taishan 部署 DeepSeek-V4-Flash：下载、传输与验收](2026-11-04-taishan-deepseek-v4-flash/README.md) | KT + SGLang，单张 Ascend 910B4-1 + 鲲鹏 CPU 卸载；健康检查、中文问答、计算及流式接口通过 |
 
 报告中的运行状态、速度和时间均为对应实验时的记录；当前服务状态需按各报告中的检查命令确认。权重、构建产物和大体积运行日志不纳入本目录。
+
+社区分享准备：[43 层 MXFP4 CPU 专家 GGUF 候选包与完整审计](2026-11-04-taishan-deepseek-v4-flash/community-release/README.md)。当前为未发布草稿，完整审计在服务器后台运行。

@@ -217,6 +217,8 @@ print(response.json()["choices"][0]["message"]["content"])
 
 ## 9. 归档与复现
 
+社区分享候选包与追加的完整审计流程见 [community-release](community-release/README.md)。该流程在部署验收之后独立启动；本报告第 6 节记录的三层抽查是此前部署时的验证范围，完整审计结果以候选包的最终状态为准。当前未发布到外部仓库。
+
 `scripts/` 保存实际部署脚本、环境配置和客户端测试；`artifacts/` 保存验收结果及下载/传输清单；[SHA256SUMS](SHA256SUMS) 用于核对本报告归档文件。
 
 脚本含本机/服务器固定路径、镜像、IP 和代理，属于本次部署快照，不能直接当作其他机器的通用安装器。`pipeline.sh` 依赖 `ktransformers-c987331.tar.gz`，此约 66.8 MB 的源码归档未纳入报告，可从对应提交重新生成：

@@ -1,0 +1,14 @@
+Community conversion of DeepSeek-V4-Flash routed CPU expert weights.
+
+Model data: derived from deepseek-ai/DeepSeek-V4-Flash, MIT License.
+Copyright (c) 2023 DeepSeek. See LICENSE for original notice and terms.
+
+Bundled convert_mxfp4_gguf.py and verify_mxfp4_gguf.py originate from
+KTransformers commit c9873312643b615a717832946fba0346e69ab035.
+They are distributed under Apache License 2.0; see LICENSE.tools.
+Original source notices are retained. Additional preparation/audit helpers
+are provided under Apache License 2.0.
+
+This is an unofficial community conversion without implied endorsement.
+GGUF files contain CPU experts only and require a compatible full runtime
+and separate non-expert/NPU weights. No W8A8 checkpoint is redistributed.
