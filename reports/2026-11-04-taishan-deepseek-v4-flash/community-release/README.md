@@ -1,5 +1,13 @@
 # 社区逐层 MXFP4 专家 GGUF 发布准备
 
+2026-11-04 18:46 最终结果：ModelScope 发布完成，状态 `published_and_verified`。43 个 GGUF 共 147,169,763,520 字节；全部 59 个文件的远端大小及 SHA-256 匹配。
+
+- [ModelScope 仓库](https://modelscope.cn/models/kmon03f/DeepSeek-V4-Flash-KT-MXFP4-CPU-Experts)
+- [发布校验记录](../artifacts/modelscope-publication-result.json)
+- [上游文档 PR #2257](https://github.com/kvcache-ai/ktransformers/pull/2257)，已创建，尚未合并。
+
+以下早期进度快照保留为历史记录，以此最终结果为准。
+
 目标是整理可审阅的 ModelScope 社区模型仓库。2026-11-04 11:15 完整审计通过，魔搭仓库已创建，文件正在后台上传；尚未完成远端上传验收。
 
 公开权重对比与定位见 [社区现有权重核查](community-availability-20261104.md)：公开整模型 MXFP4 GGUF 已存在，本包的价值是对应 KT 路径的逐层 CPU 专家交付与验证，不宣称首发或唯一。

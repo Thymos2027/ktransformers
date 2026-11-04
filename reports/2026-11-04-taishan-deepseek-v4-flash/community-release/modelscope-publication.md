@@ -1,5 +1,13 @@
 # ModelScope 后台发布任务
 
+2026-11-04 18:46 最终结果：ModelScope 发布完成，状态 `published_and_verified`。43 个 GGUF 共 147,169,763,520 字节；全部 59 个文件的远端大小及 SHA-256 匹配。
+
+- [ModelScope 仓库](https://modelscope.cn/models/kmon03f/DeepSeek-V4-Flash-KT-MXFP4-CPU-Experts)
+- [发布校验记录](../artifacts/modelscope-publication-result.json)
+- [上游文档 PR #2257](https://github.com/kvcache-ai/ktransformers/pull/2257)，已创建，尚未合并。
+
+以下早期进度快照保留为历史记录，以此最终结果为准。
+
 授权：2026-11-04 用户明确同意分享到 ModelScope，并在项目 `.env` 配置写权限令牌。`.env` 已被 Git 忽略；本任务未修改该文件或 `.gitignore`。
 
 账号认证成功：`kmon03f`。计划仓库：`kmon03f/DeepSeek-V4-Flash-KT-MXFP4-CPU-Experts`；计划 URL 为 `https://modelscope.cn/models/kmon03f/DeepSeek-V4-Flash-KT-MXFP4-CPU-Experts`。启动任务前确认该仓库尚不存在；创建前会再次检查，拒绝覆盖非本任务创建的已有仓库。

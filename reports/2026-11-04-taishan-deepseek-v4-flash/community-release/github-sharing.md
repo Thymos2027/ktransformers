@@ -1,5 +1,13 @@
 # 上传完成后的 KT 上游分享
 
+2026-11-04 18:46 最终结果：ModelScope 发布完成，状态 `published_and_verified`。43 个 GGUF 共 147,169,763,520 字节；全部 59 个文件的远端大小及 SHA-256 匹配。
+
+- [ModelScope 仓库](https://modelscope.cn/models/kmon03f/DeepSeek-V4-Flash-KT-MXFP4-CPU-Experts)
+- [发布校验记录](../artifacts/modelscope-publication-result.json)
+- [上游文档 PR #2257](https://github.com/kvcache-ai/ktransformers/pull/2257)，已创建，尚未合并。
+
+以下早期进度快照保留为历史记录，以此最终结果为准。
+
 用户于 2026-11-04 授权：ModelScope 上传完成后，可在 KTransformers 上游 Issue 或 PR 分享。
 
 选择文档 PR：上游 `.github/ISSUE_TEMPLATE/config.yml` 禁用空白 Issue，只提供 bug/feature 模板。资源下载链接更适合补入现有 Ascend 教程，而非新增无代码改动的 PR 或占用 bug Issue。此前检索未发现指向本候选包的重复 Issue/PR。

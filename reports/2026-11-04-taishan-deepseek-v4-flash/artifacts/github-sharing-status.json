@@ -1,0 +1,12 @@
+{
+  "upstream": "kvcache-ai/ktransformers",
+  "fork": "Thymos2027/ktransformers",
+  "branch": "docs/dsv4-ascend-community-mxfp4-20261104",
+  "modelscope_repository": "kmon03f/DeepSeek-V4-Flash-KT-MXFP4-CPU-Experts",
+  "posted": true,
+  "phase": "pr_opened",
+  "updated_at": "2026-11-04T18:46:34+08:00",
+  "upload_phase": "uploading",
+  "audit_layers_done": 43,
+  "pr_url": "https://github.com/kvcache-ai/ktransformers/pull/2257"
+}

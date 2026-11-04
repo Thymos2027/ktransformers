@@ -20,5 +20,7 @@
   "bytes_per_file": 3422552640,
   "total_bytes": 147169763520,
   "conversion": "Lossless repack of native MXFP4 routed-expert codes/scales into per-layer GGUF, no W8A8 included",
-  "published": false
+  "published": true,
+  "modelscope_repository": "kmon03f/DeepSeek-V4-Flash-KT-MXFP4-CPU-Experts",
+  "published_at": "2026-11-04T18:46:28+08:00"
 }

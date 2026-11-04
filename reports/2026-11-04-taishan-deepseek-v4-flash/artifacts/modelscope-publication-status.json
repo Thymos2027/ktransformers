@@ -1,0 +1,31 @@
+{
+  "repo_id": "kmon03f/DeepSeek-V4-Flash-KT-MXFP4-CPU-Experts",
+  "repo_url": "https://modelscope.cn/models/kmon03f/DeepSeek-V4-Flash-KT-MXFP4-CPU-Experts",
+  "published": true,
+  "phase": "published_and_verified",
+  "updated_at": "2026-11-04T18:46:34+08:00",
+  "authenticated_username": "kmon03f",
+  "audit_phase": "independent_sha256_recheck",
+  "audit_layers_done": 43,
+  "audit_layers_total": 43,
+  "upload_attempt": 1,
+  "progress": {
+    "event": "batch_committed",
+    "batch_index": 0,
+    "num_batches": 1,
+    "batch_files": 3,
+    "batch_bytes": 8567,
+    "committed_files": 3,
+    "committed_bytes": 8567,
+    "uploaded_bytes": 0,
+    "uploaded_files": 3,
+    "total_files": 3,
+    "total_bytes": 8567,
+    "skipped_files": 0,
+    "elapsed": 2.1433610916137695
+  },
+  "remote_files_sha256_verified": true,
+  "verified_files": 59,
+  "weight_files": 43,
+  "weight_bytes": 147169763520
+}
