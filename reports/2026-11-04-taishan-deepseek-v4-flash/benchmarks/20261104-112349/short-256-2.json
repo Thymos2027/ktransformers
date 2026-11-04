@@ -1,0 +1,33 @@
+{
+  "case": "short-256",
+  "repetition": 2,
+  "warmup": false,
+  "started_at": "2026-11-04T11:26:33.563139+08:00",
+  "completed_at": "2026-11-04T11:26:50.740229+08:00",
+  "prompt_sha256": "d687bdebab5071317e130399eb0cb647b56efdbc78e2fd5f7f04ecc5ec4b7860",
+  "prompt_tokens": 23,
+  "completion_tokens": 256,
+  "first_event_tokens": 1,
+  "ttft_seconds": 0.7514632000820711,
+  "total_seconds": 17.17703890008852,
+  "decode_tokens_per_second": 15.52467171392019,
+  "output_tokens_per_total_second": 14.90361647831401,
+  "last_token_seconds": 17.176931300084107,
+  "server_meta": {
+    "id": "5a139a0dfdf8442db79a83e6016c9ef6",
+    "finish_reason": {
+      "type": "length",
+      "length": 256
+    },
+    "prompt_tokens": 23,
+    "weight_version": "default",
+    "num_retractions": 0,
+    "reasoning_tokens": 0,
+    "completion_tokens": 256,
+    "cached_tokens": 0,
+    "cached_tokens_details": null,
+    "dp_rank": null,
+    "e2e_latency": 17.1665571500198
+  },
+  "output": "## Answer\nRunning a large language model (LLM) like GPT-4 or LLaMA involves a complex interplay between a CPU (Central Processing Unit) and an accelerator (typically a GPU, TPU, or other specialized hardware). The CPU and accelerator cooperate in a heterogeneous computing model, where each handles tasks suited to its strengths. Below is a detailed technical explanation of how they work together, with examples.\n\n### Overview of Roles\n\n- **CPU**: Optimized for low-latency, sequential tasks, complex control logic, and memory management. It handles orchestration, data preprocessing, and tasks that require fine-grained branching or irregular memory access.\n- **Accelerator (GPU/TPU)**: Designed for high-throughput, parallel computation, especially matrix operations and tensor manipulations. It excels at the core neural network computations (e.g., matrix multiplications, attention mechanisms) that dominate LLM inference and training.\n\n### Cooperation Workflow\n\nThe cooperation can be broken down into several stages: data preparation, model loading, inference execution, and post-processing. Each stage involves specific CPU and accelerator interactions.\n\n#### 1. Data Preparation and Preprocessing (CPU-Heavy)\n\nBefore the LLM can process input, the CPU prepares the data:\n\n- **Tokenization**: The"
+}

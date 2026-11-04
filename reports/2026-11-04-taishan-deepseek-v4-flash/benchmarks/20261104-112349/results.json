@@ -1,0 +1,233 @@
+[
+  {
+    "case": "short-256",
+    "repetition": 1,
+    "warmup": false,
+    "started_at": "2026-11-04T11:25:10.875443+08:00",
+    "completed_at": "2026-11-04T11:25:34.111728+08:00",
+    "prompt_sha256": "d687bdebab5071317e130399eb0cb647b56efdbc78e2fd5f7f04ecc5ec4b7860",
+    "prompt_tokens": 23,
+    "completion_tokens": 256,
+    "first_event_tokens": 1,
+    "ttft_seconds": 0.8227088999701664,
+    "total_seconds": 23.236747200018726,
+    "decode_tokens_per_second": 11.376855417882975,
+    "output_tokens_per_total_second": 11.017032538865582,
+    "last_token_seconds": 23.23663529998157,
+    "server_meta": {
+      "id": "1c3a609d080e49e383c32bc8796b9010",
+      "finish_reason": {
+        "type": "length",
+        "length": 256
+      },
+      "prompt_tokens": 23,
+      "weight_version": "default",
+      "num_retractions": 0,
+      "reasoning_tokens": 0,
+      "completion_tokens": 256,
+      "cached_tokens": 0,
+      "cached_tokens_details": null,
+      "dp_rank": null,
+      "e2e_latency": 23.215593489992898
+    },
+    "output": "## Answer\nRunning a large language model (LLM) like GPT-4 or LLaMA involves a complex interplay between a CPU (Central Processing Unit) and an accelerator (typically a GPU, TPU, or other specialized hardware). The CPU and accelerator cooperate in a heterogeneous computing model, where each handles tasks suited to its strengths. Below is a detailed technical explanation of how they work together, with examples.\n\n### Overview of Roles\n\n- **CPU**: Optimized for low-latency, sequential tasks, complex control logic, and memory management. It handles orchestration, data preprocessing, and tasks that require fine-grained branching or irregular memory access.\n- **Accelerator (GPU/TPU)**: Designed for high-throughput, parallel computation, especially matrix operations and tensor manipulations. It excels at the core neural network computations (e.g., matrix multiplications, attention mechanisms) that dominate LLM inference and training.\n\n### Cooperation Workflow\n\nThe cooperation can be broken down into several stages: data preparation, model loading, inference execution, and post-processing. Each stage involves specific CPU and accelerator interactions.\n\n#### 1. Data Preparation and Preprocessing (CPU-Heavy)\n\nBefore the LLM can process input, the CPU prepares the data:\n\n- **Tokenization**: The"
+  },
+  {
+    "case": "long-256",
+    "repetition": 1,
+    "warmup": false,
+    "started_at": "2026-11-04T11:25:34.114743+08:00",
+    "completed_at": "2026-11-04T11:26:33.560135+08:00",
+    "prompt_sha256": "f8d048faa661bcc2d3e961234c4a3e556bd916b5bbc98f7e754534e038764b6f",
+    "prompt_tokens": 1855,
+    "completion_tokens": 256,
+    "first_event_tokens": 1,
+    "ttft_seconds": 42.74186780001037,
+    "total_seconds": 59.44571240001824,
+    "decode_tokens_per_second": 15.266055010793753,
+    "output_tokens_per_total_second": 4.306450199088227,
+    "last_token_seconds": 59.445593799930066,
+    "server_meta": {
+      "id": "3f733edea3e4492a8b0b298573fd6c67",
+      "finish_reason": {
+        "type": "length",
+        "length": 256
+      },
+      "prompt_tokens": 1855,
+      "weight_version": "default",
+      "num_retractions": 0,
+      "reasoning_tokens": 0,
+      "completion_tokens": 256,
+      "cached_tokens": 0,
+      "cached_tokens_details": null,
+      "dp_rank": null,
+      "e2e_latency": 59.41748095001094
+    },
+    "output": "The server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses"
+  },
+  {
+    "case": "short-256",
+    "repetition": 2,
+    "warmup": false,
+    "started_at": "2026-11-04T11:26:33.563139+08:00",
+    "completed_at": "2026-11-04T11:26:50.740229+08:00",
+    "prompt_sha256": "d687bdebab5071317e130399eb0cb647b56efdbc78e2fd5f7f04ecc5ec4b7860",
+    "prompt_tokens": 23,
+    "completion_tokens": 256,
+    "first_event_tokens": 1,
+    "ttft_seconds": 0.7514632000820711,
+    "total_seconds": 17.17703890008852,
+    "decode_tokens_per_second": 15.52467171392019,
+    "output_tokens_per_total_second": 14.90361647831401,
+    "last_token_seconds": 17.176931300084107,
+    "server_meta": {
+      "id": "5a139a0dfdf8442db79a83e6016c9ef6",
+      "finish_reason": {
+        "type": "length",
+        "length": 256
+      },
+      "prompt_tokens": 23,
+      "weight_version": "default",
+      "num_retractions": 0,
+      "reasoning_tokens": 0,
+      "completion_tokens": 256,
+      "cached_tokens": 0,
+      "cached_tokens_details": null,
+      "dp_rank": null,
+      "e2e_latency": 17.1665571500198
+    },
+    "output": "## Answer\nRunning a large language model (LLM) like GPT-4 or LLaMA involves a complex interplay between a CPU (Central Processing Unit) and an accelerator (typically a GPU, TPU, or other specialized hardware). The CPU and accelerator cooperate in a heterogeneous computing model, where each handles tasks suited to its strengths. Below is a detailed technical explanation of how they work together, with examples.\n\n### Overview of Roles\n\n- **CPU**: Optimized for low-latency, sequential tasks, complex control logic, and memory management. It handles orchestration, data preprocessing, and tasks that require fine-grained branching or irregular memory access.\n- **Accelerator (GPU/TPU)**: Designed for high-throughput, parallel computation, especially matrix operations and tensor manipulations. It excels at the core neural network computations (e.g., matrix multiplications, attention mechanisms) that dominate LLM inference and training.\n\n### Cooperation Workflow\n\nThe cooperation can be broken down into several stages: data preparation, model loading, inference execution, and post-processing. Each stage involves specific CPU and accelerator interactions.\n\n#### 1. Data Preparation and Preprocessing (CPU-Heavy)\n\nBefore the LLM can process input, the CPU prepares the data:\n\n- **Tokenization**: The"
+  },
+  {
+    "case": "long-256",
+    "repetition": 2,
+    "warmup": false,
+    "started_at": "2026-11-04T11:26:50.742230+08:00",
+    "completed_at": "2026-11-04T11:27:32.706085+08:00",
+    "prompt_sha256": "f8d048faa661bcc2d3e961234c4a3e556bd916b5bbc98f7e754534e038764b6f",
+    "prompt_tokens": 1855,
+    "completion_tokens": 256,
+    "first_event_tokens": 1,
+    "ttft_seconds": 25.47227029991336,
+    "total_seconds": 41.96340069989674,
+    "decode_tokens_per_second": 15.462959553619555,
+    "output_tokens_per_total_second": 6.100554190800603,
+    "last_token_seconds": 41.963291899999604,
+    "server_meta": {
+      "id": "b63646592d6846f0a0ad69c6fea5dd7c",
+      "finish_reason": {
+        "type": "length",
+        "length": 256
+      },
+      "prompt_tokens": 1855,
+      "weight_version": "default",
+      "num_retractions": 0,
+      "reasoning_tokens": 0,
+      "completion_tokens": 256,
+      "cached_tokens": 0,
+      "cached_tokens_details": null,
+      "dp_rank": null,
+      "e2e_latency": 41.95164218003629
+    },
+    "output": "The server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses"
+  },
+  {
+    "case": "short-256",
+    "repetition": 3,
+    "warmup": false,
+    "started_at": "2026-11-04T11:27:32.709090+08:00",
+    "completed_at": "2026-11-04T11:27:49.865914+08:00",
+    "prompt_sha256": "d687bdebab5071317e130399eb0cb647b56efdbc78e2fd5f7f04ecc5ec4b7860",
+    "prompt_tokens": 23,
+    "completion_tokens": 256,
+    "first_event_tokens": 1,
+    "ttft_seconds": 0.7437382999341935,
+    "total_seconds": 17.15714649995789,
+    "decode_tokens_per_second": 15.536183863615353,
+    "output_tokens_per_total_second": 14.920896082610726,
+    "last_token_seconds": 17.157035299926065,
+    "server_meta": {
+      "id": "2560ffb963474767ae5da2dcc71b8f84",
+      "finish_reason": {
+        "type": "length",
+        "length": 256
+      },
+      "prompt_tokens": 23,
+      "weight_version": "default",
+      "num_retractions": 0,
+      "reasoning_tokens": 0,
+      "completion_tokens": 256,
+      "cached_tokens": 0,
+      "cached_tokens_details": null,
+      "dp_rank": null,
+      "e2e_latency": 17.13155316998018
+    },
+    "output": "## Answer\nRunning a large language model (LLM) like GPT-4 or LLaMA involves a complex interplay between a CPU (Central Processing Unit) and an accelerator (typically a GPU, TPU, or other specialized hardware). The CPU and accelerator cooperate in a heterogeneous computing model, where each handles tasks suited to its strengths. Below is a detailed technical explanation of how they work together, with examples.\n\n### Overview of Roles\n\n- **CPU**: Optimized for low-latency, sequential tasks, complex control logic, and memory management. It handles orchestration, data preprocessing, and tasks that require fine-grained branching or irregular memory access.\n- **Accelerator (GPU/TPU)**: Designed for high-throughput, parallel computation, especially matrix operations and tensor manipulations. It excels at the core neural network computations (e.g., matrix multiplications, attention mechanisms) that dominate LLM inference and training.\n\n### Cooperation Workflow\n\nThe cooperation can be broken down into several stages: data preparation, model loading, inference execution, and post-processing. Each stage involves specific CPU and accelerator interactions.\n\n#### 1. Data Preparation and Preprocessing (CPU-Heavy)\n\nBefore the LLM can process input, the CPU prepares the data:\n\n- **Tokenization**: The"
+  },
+  {
+    "case": "long-256",
+    "repetition": 3,
+    "warmup": false,
+    "started_at": "2026-11-04T11:27:49.870306+08:00",
+    "completed_at": "2026-11-04T11:28:31.881824+08:00",
+    "prompt_sha256": "f8d048faa661bcc2d3e961234c4a3e556bd916b5bbc98f7e754534e038764b6f",
+    "prompt_tokens": 1855,
+    "completion_tokens": 256,
+    "first_event_tokens": 1,
+    "ttft_seconds": 25.475643299985677,
+    "total_seconds": 42.01167699997313,
+    "decode_tokens_per_second": 15.420964108859547,
+    "output_tokens_per_total_second": 6.09354394494092,
+    "last_token_seconds": 42.01157440000679,
+    "server_meta": {
+      "id": "3a0830f4f59744a0bdd1fb7d4d33629e",
+      "finish_reason": {
+        "type": "length",
+        "length": 256
+      },
+      "prompt_tokens": 1855,
+      "weight_version": "default",
+      "num_retractions": 0,
+      "reasoning_tokens": 0,
+      "completion_tokens": 256,
+      "cached_tokens": 0,
+      "cached_tokens_details": null,
+      "dp_rank": null,
+      "e2e_latency": 41.99863990000449
+    },
+    "output": "The server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses"
+  },
+  {
+    "case": "short-512",
+    "repetition": 1,
+    "warmup": false,
+    "started_at": "2026-11-04T11:28:31.885280+08:00",
+    "completed_at": "2026-11-04T11:29:06.274617+08:00",
+    "prompt_sha256": "d687bdebab5071317e130399eb0cb647b56efdbc78e2fd5f7f04ecc5ec4b7860",
+    "prompt_tokens": 23,
+    "completion_tokens": 512,
+    "first_event_tokens": 1,
+    "ttft_seconds": 0.7423825999721885,
+    "total_seconds": 34.38965410005767,
+    "decode_tokens_per_second": 15.187020790428791,
+    "output_tokens_per_total_second": 14.888198599215961,
+    "last_token_seconds": 34.38953479996417,
+    "server_meta": {
+      "id": "85be1a0b6cbc4898992bfc9a3cc0c7a2",
+      "finish_reason": {
+        "type": "length",
+        "length": 512
+      },
+      "prompt_tokens": 23,
+      "weight_version": "default",
+      "num_retractions": 0,
+      "reasoning_tokens": 0,
+      "completion_tokens": 512,
+      "cached_tokens": 0,
+      "cached_tokens_details": null,
+      "dp_rank": null,
+      "e2e_latency": 34.37136506004026
+    },
+    "output": "## Answer\nRunning a large language model (LLM) like GPT-4 or LLaMA involves a complex interplay between a CPU (Central Processing Unit) and an accelerator (typically a GPU, TPU, or other specialized hardware). The CPU and accelerator cooperate in a heterogeneous computing model, where each handles tasks suited to its strengths. Below is a detailed technical explanation of how they work together, with examples.\n\n### Overview of Roles\n\n- **CPU**: Optimized for low-latency, sequential tasks, complex control logic, and memory management. It handles orchestration, data preprocessing, and tasks that require fine-grained branching or irregular memory access.\n- **Accelerator (GPU/TPU)**: Designed for high-throughput, parallel computation, especially matrix operations and tensor manipulations. It excels at the core neural network computations (e.g., matrix multiplications, attention mechanisms) that dominate LLM inference and training.\n\n### Cooperation Workflow\n\nThe cooperation can be broken down into several stages: data preparation, model loading, inference execution, and post-processing. Each stage involves specific CPU and accelerator interactions.\n\n#### 1. Data Preparation and Preprocessing (CPU-Heavy)\n\nBefore the LLM can process input, the CPU prepares the data:\n\n- **Tokenization**: The CPU converts raw text into tokens (e.g., using Byte-Pair Encoding or SentencePiece). This involves string operations, vocabulary lookups, and handling special tokens (e.g., `<|endoftext|>`). For example, the sentence \"Hello, world!\" might be tokenized into `[15496, 11, 995, 0]` (GPT-2 tokenizer).\n- **Batching**: The CPU groups multiple input sequences into a batch, padding them to the same length. It also creates attention masks to indicate which tokens are padding.\n- **Memory Transfer**: The CPU copies the tokenized input tensors (e.g., `input_ids`, `attention_mask`) from host memory (RAM) to accelerator memory (VRAM) via a high-speed bus like PCIe or NVLink.\n\n**Example**: In PyTorch, the CPU runs:\n```python\ninputs = tokenizer(\"Hello, world!\", return_tensors=\"pt\")\ninputs = {k: v.to(\"cuda\") for k, v in inputs.items()}  # CPU copies to GPU\n```\n\n#### 2. Model Loading and Initialization (CPU Orchestrates)\n\nThe CPU loads the model weights (stored as tensors) from disk into RAM,"
+  }
+]

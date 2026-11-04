@@ -1,0 +1,33 @@
+{
+  "case": "long-256",
+  "repetition": 3,
+  "warmup": false,
+  "started_at": "2026-11-04T11:27:49.870306+08:00",
+  "completed_at": "2026-11-04T11:28:31.881824+08:00",
+  "prompt_sha256": "f8d048faa661bcc2d3e961234c4a3e556bd916b5bbc98f7e754534e038764b6f",
+  "prompt_tokens": 1855,
+  "completion_tokens": 256,
+  "first_event_tokens": 1,
+  "ttft_seconds": 25.475643299985677,
+  "total_seconds": 42.01167699997313,
+  "decode_tokens_per_second": 15.420964108859547,
+  "output_tokens_per_total_second": 6.09354394494092,
+  "last_token_seconds": 42.01157440000679,
+  "server_meta": {
+    "id": "3a0830f4f59744a0bdd1fb7d4d33629e",
+    "finish_reason": {
+      "type": "length",
+      "length": 256
+    },
+    "prompt_tokens": 1855,
+    "weight_version": "default",
+    "num_retractions": 0,
+    "reasoning_tokens": 0,
+    "completion_tokens": 256,
+    "cached_tokens": 0,
+    "cached_tokens_details": null,
+    "dp_rank": null,
+    "e2e_latency": 41.99863990000449
+  },
+  "output": "The server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses CPU expert offload and accelerator attention. Memory bandwidth, thread scheduling, and data movement affect latency.\nThe server uses"
+}

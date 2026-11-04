@@ -1,0 +1,33 @@
+{
+  "case": "short-512",
+  "repetition": 1,
+  "warmup": false,
+  "started_at": "2026-11-04T11:28:31.885280+08:00",
+  "completed_at": "2026-11-04T11:29:06.274617+08:00",
+  "prompt_sha256": "d687bdebab5071317e130399eb0cb647b56efdbc78e2fd5f7f04ecc5ec4b7860",
+  "prompt_tokens": 23,
+  "completion_tokens": 512,
+  "first_event_tokens": 1,
+  "ttft_seconds": 0.7423825999721885,
+  "total_seconds": 34.38965410005767,
+  "decode_tokens_per_second": 15.187020790428791,
+  "output_tokens_per_total_second": 14.888198599215961,
+  "last_token_seconds": 34.38953479996417,
+  "server_meta": {
+    "id": "85be1a0b6cbc4898992bfc9a3cc0c7a2",
+    "finish_reason": {
+      "type": "length",
+      "length": 512
+    },
+    "prompt_tokens": 23,
+    "weight_version": "default",
+    "num_retractions": 0,
+    "reasoning_tokens": 0,
+    "completion_tokens": 512,
+    "cached_tokens": 0,
+    "cached_tokens_details": null,
+    "dp_rank": null,
+    "e2e_latency": 34.37136506004026
+  },
+  "output": "## Answer\nRunning a large language model (LLM) like GPT-4 or LLaMA involves a complex interplay between a CPU (Central Processing Unit) and an accelerator (typically a GPU, TPU, or other specialized hardware). The CPU and accelerator cooperate in a heterogeneous computing model, where each handles tasks suited to its strengths. Below is a detailed technical explanation of how they work together, with examples.\n\n### Overview of Roles\n\n- **CPU**: Optimized for low-latency, sequential tasks, complex control logic, and memory management. It handles orchestration, data preprocessing, and tasks that require fine-grained branching or irregular memory access.\n- **Accelerator (GPU/TPU)**: Designed for high-throughput, parallel computation, especially matrix operations and tensor manipulations. It excels at the core neural network computations (e.g., matrix multiplications, attention mechanisms) that dominate LLM inference and training.\n\n### Cooperation Workflow\n\nThe cooperation can be broken down into several stages: data preparation, model loading, inference execution, and post-processing. Each stage involves specific CPU and accelerator interactions.\n\n#### 1. Data Preparation and Preprocessing (CPU-Heavy)\n\nBefore the LLM can process input, the CPU prepares the data:\n\n- **Tokenization**: The CPU converts raw text into tokens (e.g., using Byte-Pair Encoding or SentencePiece). This involves string operations, vocabulary lookups, and handling special tokens (e.g., `<|endoftext|>`). For example, the sentence \"Hello, world!\" might be tokenized into `[15496, 11, 995, 0]` (GPT-2 tokenizer).\n- **Batching**: The CPU groups multiple input sequences into a batch, padding them to the same length. It also creates attention masks to indicate which tokens are padding.\n- **Memory Transfer**: The CPU copies the tokenized input tensors (e.g., `input_ids`, `attention_mask`) from host memory (RAM) to accelerator memory (VRAM) via a high-speed bus like PCIe or NVLink.\n\n**Example**: In PyTorch, the CPU runs:\n```python\ninputs = tokenizer(\"Hello, world!\", return_tensors=\"pt\")\ninputs = {k: v.to(\"cuda\") for k, v in inputs.items()}  # CPU copies to GPU\n```\n\n#### 2. Model Loading and Initialization (CPU Orchestrates)\n\nThe CPU loads the model weights (stored as tensors) from disk into RAM,"
+}

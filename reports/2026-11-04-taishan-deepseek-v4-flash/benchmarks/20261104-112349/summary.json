@@ -1,0 +1,86 @@
+[
+  {
+    "case": "short-256",
+    "repetitions": 3,
+    "prompt_tokens": [
+      23
+    ],
+    "completion_tokens": 256,
+    "ttft_seconds": {
+      "median": 0.7514632000820711,
+      "min": 0.7437382999341935,
+      "max": 0.8227088999701664
+    },
+    "decode_tokens_per_second": {
+      "median": 15.52467171392019,
+      "min": 11.376855417882975,
+      "max": 15.536183863615353
+    },
+    "total_seconds": {
+      "median": 17.17703890008852,
+      "min": 17.15714649995789,
+      "max": 23.236747200018726
+    },
+    "output_tokens_per_total_second": {
+      "median": 14.90361647831401,
+      "min": 11.017032538865582,
+      "max": 14.920896082610726
+    }
+  },
+  {
+    "case": "long-256",
+    "repetitions": 3,
+    "prompt_tokens": [
+      1855
+    ],
+    "completion_tokens": 256,
+    "ttft_seconds": {
+      "median": 25.475643299985677,
+      "min": 25.47227029991336,
+      "max": 42.74186780001037
+    },
+    "decode_tokens_per_second": {
+      "median": 15.420964108859547,
+      "min": 15.266055010793753,
+      "max": 15.462959553619555
+    },
+    "total_seconds": {
+      "median": 42.01167699997313,
+      "min": 41.96340069989674,
+      "max": 59.44571240001824
+    },
+    "output_tokens_per_total_second": {
+      "median": 6.09354394494092,
+      "min": 4.306450199088227,
+      "max": 6.100554190800603
+    }
+  },
+  {
+    "case": "short-512",
+    "repetitions": 1,
+    "prompt_tokens": [
+      23
+    ],
+    "completion_tokens": 512,
+    "ttft_seconds": {
+      "median": 0.7423825999721885,
+      "min": 0.7423825999721885,
+      "max": 0.7423825999721885
+    },
+    "decode_tokens_per_second": {
+      "median": 15.187020790428791,
+      "min": 15.187020790428791,
+      "max": 15.187020790428791
+    },
+    "total_seconds": {
+      "median": 34.38965410005767,
+      "min": 34.38965410005767,
+      "max": 34.38965410005767
+    },
+    "output_tokens_per_total_second": {
+      "median": 14.888198599215961,
+      "min": 14.888198599215961,
+      "max": 14.888198599215961
+    }
+  }
+]

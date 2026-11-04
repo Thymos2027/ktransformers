@@ -1,0 +1,33 @@
+{
+  "case": "warmup",
+  "repetition": 1,
+  "warmup": true,
+  "started_at": "2026-11-04T11:25:04.408171+08:00",
+  "completed_at": "2026-11-04T11:25:10.873315+08:00",
+  "prompt_sha256": "d687bdebab5071317e130399eb0cb647b56efdbc78e2fd5f7f04ecc5ec4b7860",
+  "prompt_tokens": 23,
+  "completion_tokens": 32,
+  "first_event_tokens": 1,
+  "ttft_seconds": 2.8923496999777853,
+  "total_seconds": 6.465330099919811,
+  "decode_tokens_per_second": 8.676536049369059,
+  "output_tokens_per_total_second": 4.9494765936849685,
+  "last_token_seconds": 6.465204099891707,
+  "server_meta": {
+    "id": "f0006f938fa343a4bc2717786bfc5bd4",
+    "finish_reason": {
+      "type": "length",
+      "length": 32
+    },
+    "prompt_tokens": 23,
+    "weight_version": "default",
+    "num_retractions": 0,
+    "reasoning_tokens": 0,
+    "completion_tokens": 32,
+    "cached_tokens": 0,
+    "cached_tokens_details": null,
+    "dp_rank": null,
+    "e2e_latency": 6.458462410024367
+  },
+  "output": "## Answer\nRunning a large language model (LLM) like GPT-4 or LLaMA involves a complex interplay between a CPU (Central Processing Unit)"
+}

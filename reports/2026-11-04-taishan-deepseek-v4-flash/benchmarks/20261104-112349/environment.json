@@ -1,0 +1,20 @@
+{
+  "captured_at": "2026-11-04T11:25:04.403162+08:00",
+  "endpoint": "http://192.168.137.11:18080",
+  "client": "Windows LAN; requests trust_env=False",
+  "server": {
+    "model_path": "/workspace/models/DeepSeek-V4-Flash-W8A8",
+    "device": "npu",
+    "quantization": "compressed-tensors",
+    "context_length": 8192,
+    "max_running_requests": 1,
+    "disable_radix_cache": true,
+    "stream_interval": 1,
+    "kt_num_gpu_experts": 32,
+    "kt_threadpool_count": 4,
+    "kt_cpuinfer": 96,
+    "mem_fraction_static": 0.81,
+    "chunked_prefill_size": 512
+  },
+  "background_activity": "Full GGUF audit passed at 11:15; ModelScope upload active at initial check. No background services paused."
+}
