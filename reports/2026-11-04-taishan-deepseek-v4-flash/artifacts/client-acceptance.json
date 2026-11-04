@@ -1,0 +1,43 @@
+{
+  "started_at": "2026-11-04T08:36:51.104901+08:00",
+  "endpoint": "http://192.168.137.11:18080/v1",
+  "tests": [
+    {
+      "name": "chinese_capital",
+      "passed": true,
+      "content": "巴黎",
+      "usage": {
+        "prompt_tokens": 14,
+        "total_tokens": 16,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "seconds": 2.375
+    },
+    {
+      "name": "arithmetic",
+      "passed": true,
+      "content": "42",
+      "usage": {
+        "prompt_tokens": 16,
+        "total_tokens": 18,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "seconds": 1.5309999999590218
+    },
+    {
+      "name": "streaming",
+      "passed": true,
+      "content": "READY",
+      "done_marker": true,
+      "first_content_seconds": 1.062000000034459,
+      "seconds": 1.2650000000139698
+    }
+  ],
+  "model": "/workspace/models/DeepSeek-V4-Flash-W8A8",
+  "passed": true,
+  "completed_at": "2026-11-04T08:36:57.284546+08:00"
+}

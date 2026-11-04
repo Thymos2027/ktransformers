@@ -1,0 +1,28 @@
+{
+  "scope": "partial_model_batch",
+  "full_model_files": 65,
+  "phase": "batch_complete_all_remote_sha256_verified",
+  "source": "D:\\Models\\DeepSeek\\DeepSeek-V4-Flash-W8A8",
+  "destination": "taishan:/data/llm/DeepSeek-V4-Flash-W8A8",
+  "workers": {},
+  "started_at": "2026-11-03T15:39:37+08:00",
+  "updated_at": "2026-11-03T16:08:35+08:00",
+  "progress": {
+    "verified_files": 47,
+    "total_files": 47,
+    "transferred_bytes": 200470758987,
+    "total_bytes": 200470758987,
+    "partials": []
+  },
+  "bytes_per_second": 60301035,
+  "completed_at": "2026-11-03T16:08:35+08:00",
+  "verification": {
+    "scope": "partial_model_batch",
+    "model_id": "sgl-npu/DeepSeek-V4-Flash-W8A8",
+    "completed_at_unix": 1793693335.2916522,
+    "all_files_sha256_verified": true,
+    "files": 47,
+    "bytes": 200470758987,
+    "source_manifest_sha256": "0a1df5f2937446077070c5415bc71616ed88cab97697b9c839b04abaf70d5d47"
+  }
+}

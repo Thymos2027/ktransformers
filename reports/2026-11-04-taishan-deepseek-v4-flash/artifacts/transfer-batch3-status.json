@@ -1,0 +1,39 @@
+{
+  "scope": "full_model",
+  "full_model_files": 65,
+  "phase": "complete_all_remote_sha256_verified",
+  "source": "D:\\Models\\DeepSeek\\DeepSeek-V4-Flash-W8A8",
+  "destination": "taishan:/data/llm/DeepSeek-V4-Flash-W8A8",
+  "workers": {},
+  "started_at": "2026-11-03T23:59:29+08:00",
+  "updated_at": "2026-11-04T00:05:37+08:00",
+  "progress": {
+    "verified_files": 6,
+    "total_files": 6,
+    "transferred_bytes": 39911526644,
+    "total_bytes": 39911526644,
+    "partials": []
+  },
+  "bytes_per_second": 24727668,
+  "verification": {
+    "scope": "partial_model_batch",
+    "model_id": "sgl-npu/DeepSeek-V4-Flash-W8A8",
+    "completed_at_unix": 1793721956.8424048,
+    "all_files_sha256_verified": true,
+    "files": 6,
+    "bytes": 39911526644,
+    "source_manifest_sha256": "266a183eb385f7a78ec0cf6a623260f742ae55e461e8bd9a82cd37b9f79c56b4"
+  },
+  "completed_at": "2026-11-04T00:05:37+08:00",
+  "full_model_verification": {
+    "scope": "full_model",
+    "model_id": "sgl-npu/DeepSeek-V4-Flash-W8A8",
+    "completed_at_unix": 1793721957.2381473,
+    "all_files_sha256_verified": true,
+    "files": 65,
+    "bytes": 294635333768,
+    "unchanged_remote_sha256_records_reused": 65,
+    "files_rehashed": 0,
+    "source_manifest_sha256": "ff210e4f7e17d76927fd3052c3ace8bc83cfdd02be88c8f0693c3539c784484d"
+  }
+}

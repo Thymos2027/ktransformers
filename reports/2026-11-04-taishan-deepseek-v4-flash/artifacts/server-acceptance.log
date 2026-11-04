@@ -1,0 +1,23 @@
+
+1. HBM accounting  (log: /workspace/logs/serve-attempt-1.log)
+       [2026-11-04 00:08:19] Load weight begin. avail mem=60.50 GB
+         TP 1: intermediate_size=512, offset=512, blocks=[2026-11-04 00:14:44] Load weight end. elapsed=384.50 s, type=DeepseekV4ForCausalLM, quant=compressed-tensors, avail mem=18.25 GB, mem usage=42.26 GB.
+  [32mok[0m   KV pools: full=933760 swa=93312 
+       swa is a fixed 10% of full. A prompt longer than swa cannot be
+       scheduled and the scheduler spins instead of reporting it.
+
+2. NPU graph capture
+  [32mok[0m   Capture target decode NPU graph end. elapsed=33.22 s, mem usage=0.26 GB, avail mem=8.08 GB.
+
+3. Health
+  [32mok[0m   /health -> 200
+  [32mok[0m   /health_generate -> 200
+
+4. Numerical probe
+  [32mok[0m   completion:  Paris.",
+    "The capital of France is Paris.",
+    "The capital of
+       Greedy decoding is deterministic here: re-run this and compare byte for
+       byte, and compare against another machine before trusting any number.
+
+[32mALL CHECKS PASSED[0m

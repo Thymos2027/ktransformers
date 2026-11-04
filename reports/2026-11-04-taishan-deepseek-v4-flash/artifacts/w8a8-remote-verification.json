@@ -1,0 +1,11 @@
+{
+  "scope": "full_model",
+  "model_id": "sgl-npu/DeepSeek-V4-Flash-W8A8",
+  "completed_at_unix": 1793721957.2381473,
+  "all_files_sha256_verified": true,
+  "files": 65,
+  "bytes": 294635333768,
+  "unchanged_remote_sha256_records_reused": 65,
+  "files_rehashed": 0,
+  "source_manifest_sha256": "ff210e4f7e17d76927fd3052c3ace8bc83cfdd02be88c8f0693c3539c784484d"
+}

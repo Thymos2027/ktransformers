@@ -1,0 +1,41 @@
+
+CANN
+  [32mok[0m   toolkit 9.0.0 at /usr/local/Ascend
+  [32mok[0m   vendor customize
+  [32mok[0m   vendor custom_transformer
+  [32mok[0m   ASCEND_CUSTOM_OPP_PATH includes the vendors
+
+Python stack
+  ok   torch: 2.10.0+cpu
+  ok   torch_npu: 2.10.0
+  ok   npu available: True devices=2
+  ok   transformers: 5.12.1
+  ok   custom_ops: imported
+  ok   torch.ops.custom.* all present
+
+kt-kernel
+  ok   kt_kernel_ext at /usr/local/python3.11.15/lib/python3.11/site-packages/kt_kernel/kt_kernel_ext.cpython-311-aarch64-linux-gnu.so
+  ok   Ascend callback worker binding present
+  ok   GGMLQuantizationType.MXFP4 == 39
+
+sgl-kernel-npu
+  [32mok[0m   sgl_kernel_npu importable
+
+SGLang
+  [32mok[0m   sglang resolves to the clone: /workspace/sources/sglang/python/sglang/__init__.py
+
+Weights
+  [32mok[0m   W8A8 checkpoint /workspace/models/DeepSeek-V4-Flash-W8A8 (quantization: compressed-tensors)
+  [32mok[0m   43 per-layer MXFP4 GGUF files in /workspace/gguf
+  [32mok[0m   DSV4_GGUF_TEMPLATE contains the {layer_idx} placeholder
+
+Host resources
+  [32mok[0m   NUMA nodes=4 -> --kt-threadpool-count 4, --kt-cpuinfer 96
+  [32mok[0m   host RAM 502 GB
+  [32mok[0m   free space on the GGUF filesystem: 60909 GB
+
+Serving parameters
+  [32mok[0m   --chunked-prefill-size 512 is a positive multiple of --page-size 128
+  [32mok[0m   no HTTP proxy set
+
+[32mPREFLIGHT OK[0m

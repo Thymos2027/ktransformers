@@ -1,0 +1,8 @@
+{
+  "model_id": "deepseek-ai/DeepSeek-V4-Flash",
+  "completed_at_unix": 1793605530.995154,
+  "all_files_sha256_verified": true,
+  "files": 74,
+  "bytes": 159630045338,
+  "source_manifest_sha256": "f465af9a73cb8b6be6c8516f5d15ed5f89771b2dfda4d9e3c3368a4aef10b14f"
+}

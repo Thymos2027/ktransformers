@@ -1,0 +1,6 @@
+{
+  "started_at": "2026-11-04T00:09:21+08:00",
+  "phase": "serving_verified",
+  "updated_at": "2026-11-04T08:16:41+08:00",
+  "message": "Health, Paris probe and chat passed; see acceptance.json and logs/acceptance.log"
+}

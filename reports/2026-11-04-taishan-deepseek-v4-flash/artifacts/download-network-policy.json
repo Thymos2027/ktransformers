@@ -1,0 +1,8 @@
+{
+  "sources": "modelscope_only",
+  "ipv4_only": true,
+  "workers": 8,
+  "endpoint": "api",
+  "reason": "User authorized proxy/source exploration; resume frozen ModelScope files with SHA256 verification.",
+  "proxy": "direct"
+}

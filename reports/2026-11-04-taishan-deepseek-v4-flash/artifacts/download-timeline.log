@@ -1,0 +1,22 @@
+2026-10-31 17:35:32,798 INFO PHASE fetching_frozen_manifests
+2026-10-31 17:35:33,798 INFO PHASE validating_config_and_real_cpu_weight_samples
+2026-10-31 17:35:35,276 INFO DOWNLOAD deepseek-ai/DeepSeek-V4-Flash/config.json offset=0/1749 attempt=1
+2026-10-31 17:35:35,872 INFO VERIFIED deepseek-ai/DeepSeek-V4-Flash/config.json
+2026-10-31 17:35:35,874 INFO DOWNLOAD deepseek-ai/DeepSeek-V4-Flash/model.safetensors.index.json offset=0/5371381 attempt=1
+2026-10-31 17:35:37,158 INFO VERIFIED deepseek-ai/DeepSeek-V4-Flash/model.safetensors.index.json
+2026-10-31 17:35:37,180 INFO DOWNLOAD sgl-npu/DeepSeek-V4-Flash-W8A8/config.json offset=0/12939 attempt=1
+2026-10-31 17:35:37,644 INFO VERIFIED sgl-npu/DeepSeek-V4-Flash-W8A8/config.json
+2026-10-31 17:35:37,645 INFO DOWNLOAD sgl-npu/DeepSeek-V4-Flash-W8A8/model.safetensors.index.json offset=0/5600570 attempt=1
+2026-10-31 17:35:38,881 INFO VERIFIED sgl-npu/DeepSeek-V4-Flash-W8A8/model.safetensors.index.json
+2026-10-31 17:37:24,502 INFO PHASE downloading_full_models
+2026-10-31 17:37:24,512 INFO DOWNLOAD deepseek-ai/DeepSeek-V4-Flash/.gitattributes offset=0/5267 attempt=1
+2026-10-31 17:37:24,515 INFO DOWNLOAD deepseek-ai/DeepSeek-V4-Flash/LICENSE offset=0/1084 attempt=1
+2026-11-02 02:56:31,714 INFO VERIFIED deepseek-ai/DeepSeek-V4-Flash/model-00046-of-00046.safetensors
+2026-11-02 02:56:31,725 INFO DOWNLOAD sgl-npu/DeepSeek-V4-Flash-W8A8/README.md offset=0/1425 attempt=1 source=modelscope_direct
+2026-11-02 02:56:31,725 INFO DOWNLOAD sgl-npu/DeepSeek-V4-Flash-W8A8/.gitattributes offset=0/5318 attempt=1 source=modelscope_direct
+2026-11-02 02:56:31,726 INFO DOWNLOAD sgl-npu/DeepSeek-V4-Flash-W8A8/configuration.json offset=0/48 attempt=1 source=modelscope_direct
+2026-11-02 02:56:31,737 INFO VERIFIED existing sgl-npu/DeepSeek-V4-Flash-W8A8/config.json
+2026-11-02 02:56:31,739 INFO DOWNLOAD sgl-npu/DeepSeek-V4-Flash-W8A8/encoding/encoding_dsv4.py offset=0/27908 attempt=1 source=modelscope_direct
+2026-11-03 23:13:52,257 INFO VERIFIED sgl-npu/DeepSeek-V4-Flash-W8A8/model-00043-of-00046.safetensors
+2026-11-03 23:13:52,283 INFO PHASE download_complete_all_sha256_verified
+2026-11-03 23:13:52,284 INFO DOWNLOAD COMPLETE. GGUF conversion and full-model deployment are not yet performed.
