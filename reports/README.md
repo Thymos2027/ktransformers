@@ -1,9 +1,19 @@
-# 实验与部署报告
+# taishan 研究与实验报告
 
-| 日期 | 报告 | 结论 |
+更新：2026-11-08（北京时间）。本目录记录鲲鹏 920 + Ascend 910B 上的 KTransformers（KT）与 SGLang 联合验证。各报告中的“当前”只代表记录时的状态；服务是否仍在运行需要另行核查。
+
+## 阅读入口
+
+1. [研究计划](RESEARCH_PLAN.md)：下一轮单卡基准的实验范围、验收口径和后续选题门槛。
+2. [研究状态](RESEARCH_STATUS.md)：已完成、待验证及当前下一步；不代表服务器实时状态。
+3. [阶段成果](RESEARCH_OUTCOMES.md)：可核对的发布、部署和离线研究结果及其限制。
+
+## 原始报告
+
+| 日期 | 报告 | 已验证的范围 |
 | --- | --- | --- |
-| 2026-11-04 | [taishan 部署 DeepSeek-V4-Flash：下载、传输与验收](2026-11-04-taishan-deepseek-v4-flash/README.md) | KT + SGLang，单张 Ascend 910B4-1 + 鲲鹏 CPU 卸载；健康检查、中文问答、计算及流式接口通过 |
+| 2026-11-04 | [DeepSeek-V4-Flash 部署与验收](2026-11-04-taishan-deepseek-v4-flash/README.md) | 单张 910B4-1、单请求、8192 token；图捕获、健康检查、短聊天与流式结束通过 |
+| 2026-11-04 | [逐层 MXFP4 CPU 专家发布与审计](2026-11-04-taishan-deepseek-v4-flash/community-release/README.md) | 43 个 GGUF 完整审计、ModelScope 发布和远端大小/哈希核对；KT 文档 PR #2257 后续已合并 |
+| 2026-11-07 | [专家路由与缓存策略研究](2026-11-07-taishan-expert-cache-study/README.md) | 20 条受控请求的路由采集、离线策略回放和单专家搬运微基准；未实测策略端到端加速 |
 
-报告中的运行状态、速度和时间均为对应实验时的记录；当前服务状态需按各报告中的检查命令确认。权重、构建产物和大体积运行日志不纳入本目录。
-
-社区分享准备：[43 层 MXFP4 CPU 专家 GGUF 与完整审计](2026-11-04-taishan-deepseek-v4-flash/community-release/README.md)。2026-11-04 11:15 完整审计通过，魔搭上传进行中，GitHub 文档 PR 等待上传验收。
+权重、构建产物和大体积运行日志不纳入本目录。新实验按运行开始日建独立目录，保留脚本、固定环境、原始逐次结果、失败记录及结果报告；根目录三份研究文档只维护当前判断和证据入口。
