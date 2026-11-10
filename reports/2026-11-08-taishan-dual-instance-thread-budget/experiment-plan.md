@@ -11,3 +11,7 @@
 ## 2026-11-10 重跑
 
 首轮因单次 SSH 状态读取超时而在第二实例加载期间中断，见[失败复盘](REVIEW.md)。本地控制器已将单次读取超时视为暂时无结果。重跑保留完全相同的 A→E 请求和资源采集方案，使用本机 `runs/second/` 和远端 `/data/deploy/dsv4-20261104/dual-instance-thread-budget-20261110`，不覆盖首轮证据。`retry_controller.py` 等待重启后的原服务通过 `/health` 和短请求，再启动 `diagnose.py`。第二实例仍仅将 `DSV4_CPUINFER` 设置为 32，原实例配置保持原部署值。结束后仍须独立核对实验清理、原服务健康和结果可比性。
+
+高温事故后的实际重跑使用本机 `runs/retry-thermal-guard/`（控制器）和 `runs/second-thermal-guard/`（实验），并由恢复目录中的 `resume_guarded.py` 独立采集温度、风扇与健康状态，旧 `runs/first/` 未覆盖。重跑已完成，验收与分析见[结果](RESULT.md)。
+
+本轮双实例研究已[结项](CLOSEOUT.md)；后续亲和性、NUMA 或内存带宽实验需另立方案，本计划不再自动续跑。

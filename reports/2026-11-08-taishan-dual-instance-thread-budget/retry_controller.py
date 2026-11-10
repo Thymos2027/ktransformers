@@ -14,7 +14,8 @@ import requests
 
 
 HERE = Path(__file__).resolve().parent
-STATE_DIR = HERE / "runs" / "retry-controller"
+STATE_DIR = HERE / "runs" / "retry-thermal-guard"
+EXPERIMENT_DIR = HERE / "runs" / "second-thermal-guard"
 BASE = "http://192.168.137.11:18080"
 MODEL = "/workspace/models/DeepSeek-V4-Flash-W8A8"
 
@@ -79,20 +80,20 @@ def main() -> int:
         if check.returncode or "No running processes found in NPU 5" not in check.stdout:
             raise RuntimeError("NPU 5 is not idle after original service recovery")
         (STATE_DIR / "npu-smi-before.txt").write_text(check.stdout, encoding="utf-8")
-        if (HERE / "runs" / "second").exists():
-            raise RuntimeError("runs/second already exists")
-        status("experiment_running", output="runs/second")
+        if EXPERIMENT_DIR.exists():
+            raise RuntimeError(f"experiment output already exists: {EXPERIMENT_DIR}")
+        status("experiment_running", output=str(EXPERIMENT_DIR.relative_to(HERE)))
         with (STATE_DIR / "experiment.stdout.log").open("wb") as stdout, \
              (STATE_DIR / "experiment.stderr.log").open("wb") as stderr:
             result = subprocess.run([sys.executable, "-u", str(HERE / "diagnose.py"),
-                                     "--output", str(HERE / "runs" / "second")],
+                                     "--output", str(EXPERIMENT_DIR)],
                                     stdout=stdout, stderr=stderr)
         if result.returncode:
             raise RuntimeError(f"diagnose.py failed with exit {result.returncode}")
-        experiment_status = json.loads((HERE / "runs" / "second" / "status.json").read_text(encoding="utf-8"))
+        experiment_status = json.loads((EXPERIMENT_DIR / "status.json").read_text(encoding="utf-8"))
         if experiment_status.get("phase") != "complete":
             raise RuntimeError(f"experiment ended without verified cleanup: {experiment_status}")
-        status("complete", output="runs/second")
+        status("complete", output=str(EXPERIMENT_DIR.relative_to(HERE)))
         return 0
     except Exception as exc:
         status("failed", error=f"{type(exc).__name__}: {exc}")
