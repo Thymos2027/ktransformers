@@ -1,0 +1,276 @@
+{
+  "run_id": "20261111-kv-cap",
+  "remote_completed_at": "2026-11-11T12:11:34.821734+08:00",
+  "scope": "TP2/EP1 short functional validation only",
+  "source": {
+    "base_commit": "ff46d660d16cbf11ef393c80cc6b3ab7f6259780",
+    "baseline_source": "/data/deploy/dsv4-20261104/sources/sglang",
+    "isolated_source": "/data/deploy/dsv4-tp2-20261111-kv-cap/sglang"
+  },
+  "candidate": {
+    "base_sha256": "ac454c4aa5410181625a8c9aa520b7c18b6ab210e2706586e0fc7d64aad4dd8f",
+    "candidate_sha256": "3368f3bd975512e9cac32d45220aebe020f14399988a53d44745071abfdb9739",
+    "scope": "opt-in TP2/EP1 gate and diagnostics only; runtime support unverified"
+  },
+  "environment": {
+    "snapshot_image": "dsv4-tp2-trial:20261111-kv-cap",
+    "image_id": "Flag --pause has been deprecated, and enabled by default. Use --no-pause to disable pausing during commit.\nsha256:f03917b88b3696659b70e2e11c3190978af4732d87be05fc624245b9bb6f6b3e",
+    "original_container": "dsv4-kt-20261104",
+    "at": "2026-11-11T11:50:11.337285+08:00"
+  },
+  "hccl": [
+    {
+      "rank": 0,
+      "world_size": 2,
+      "checks": [
+        {
+          "count": 1,
+          "seconds": 0.6258648300063214,
+          "passed": true
+        },
+        {
+          "count": 1024,
+          "seconds": 0.0005148800046299584,
+          "passed": true
+        },
+        {
+          "count": 262144,
+          "seconds": 0.00048504999722354114,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "checks": [
+        {
+          "count": 1,
+          "seconds": 0.6264855400004308,
+          "passed": true
+        },
+        {
+          "count": 1024,
+          "seconds": 0.00045279999903868884,
+          "passed": true
+        },
+        {
+          "count": 262144,
+          "seconds": 0.00044843000068794936,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "modes": {
+    "eager": {
+      "smoke": [
+        {
+          "name": "capital",
+          "content": "巴黎",
+          "passed": true,
+          "usage": {
+            "prompt_tokens": 14,
+            "total_tokens": 16,
+            "completion_tokens": 2,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "done": true,
+          "ttft_seconds": 1.0429434100005892,
+          "seconds": 1.4256856099964352
+        },
+        {
+          "name": "arithmetic",
+          "content": "42",
+          "passed": true,
+          "usage": {
+            "prompt_tokens": 16,
+            "total_tokens": 18,
+            "completion_tokens": 2,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "done": true,
+          "ttft_seconds": 0.9940866000033566,
+          "seconds": 1.333513049998146
+        },
+        {
+          "name": "sse",
+          "content": "READY",
+          "passed": true,
+          "usage": {
+            "prompt_tokens": 12,
+            "total_tokens": 15,
+            "completion_tokens": 3,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "done": true,
+          "ttft_seconds": 0.9525067799986573,
+          "seconds": 1.6606310200004373
+        }
+      ],
+      "layers_per_rank": {
+        "0": 43,
+        "1": 43
+      },
+      "shutdown_traceback_present": true,
+      "hbm_mib": {
+        "2": 26956,
+        "5": 26898
+      }
+    },
+    "graph": {
+      "smoke": [
+        {
+          "name": "capital",
+          "content": "巴黎",
+          "passed": true,
+          "usage": {
+            "prompt_tokens": 14,
+            "total_tokens": 16,
+            "completion_tokens": 2,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "done": true,
+          "ttft_seconds": 0.7555758100061212,
+          "seconds": 0.8145319900067989
+        },
+        {
+          "name": "arithmetic",
+          "content": "42",
+          "passed": true,
+          "usage": {
+            "prompt_tokens": 16,
+            "total_tokens": 18,
+            "completion_tokens": 2,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "done": true,
+          "ttft_seconds": 0.7532271099989885,
+          "seconds": 0.8263407999984338
+        },
+        {
+          "name": "sse",
+          "content": "READY",
+          "passed": true,
+          "usage": {
+            "prompt_tokens": 12,
+            "total_tokens": 15,
+            "completion_tokens": 3,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "done": true,
+          "ttft_seconds": 0.7001233499977388,
+          "seconds": 0.8444870399980573
+        }
+      ],
+      "layers_per_rank": {
+        "0": 43,
+        "1": 43
+      },
+      "shutdown_traceback_present": true,
+      "hbm_mib": {
+        "2": 27204,
+        "5": 27147
+      }
+    },
+    "restored-original": {
+      "smoke": [
+        {
+          "name": "capital",
+          "content": "巴黎",
+          "passed": true,
+          "usage": {
+            "prompt_tokens": 14,
+            "total_tokens": 16,
+            "completion_tokens": 2,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "done": true,
+          "ttft_seconds": 0.7391293100008625,
+          "seconds": 0.7790263600036269
+        },
+        {
+          "name": "arithmetic",
+          "content": "42",
+          "passed": true,
+          "usage": {
+            "prompt_tokens": 16,
+            "total_tokens": 18,
+            "completion_tokens": 2,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "done": true,
+          "ttft_seconds": 0.6646957799966913,
+          "seconds": 0.7306984500028193
+        },
+        {
+          "name": "sse",
+          "content": "READY",
+          "passed": true,
+          "usage": {
+            "prompt_tokens": 12,
+            "total_tokens": 15,
+            "completion_tokens": 3,
+            "prompt_tokens_details": null,
+            "reasoning_tokens": 0
+          },
+          "finish_reason": "stop",
+          "done": true,
+          "ttft_seconds": 0.5984500699996715,
+          "seconds": 0.7279759199955151
+        }
+      ]
+    }
+  },
+  "monitoring": {
+    "valid_samples": 154,
+    "command_error_events": 3,
+    "max_consecutive_misses": 1,
+    "maximum_temperature_c": {
+      "2": 52,
+      "5": 52
+    },
+    "minimum_fan_rpm": 7350.0
+  },
+  "evidence_sha256": {
+    "remote/candidate.diff": "42528157d11b7ec2a5f1e010aa08c606662c652fdb054a9e3dd1c08e5ef1d48d",
+    "remote/candidate.json": "8f5efcceef9c38986453444ae7b72ff27cc0dec57c71ff70b6db52ac761a54e8",
+    "remote/controller.stdout.log": "ecc538c4d8f4142e661974e6261a3a87f168ee0e549fa686676a078bb6b9b7ca",
+    "remote/dsv4-kt-20261104-stopped.json": "bd26c1de2640492bee0f9af9d9082a3890261f441a9d9a3469f318a1fda3ef48",
+    "remote/eager-npu.json": "f1588ef0a1704439421457b588969994722a62d7117096739db91d2886c0f760",
+    "remote/eager-smoke.json": "25e5fc08f8d81122507a7ecc76e24a6b2d30801af38c97a7fbcb64a5b404db25",
+    "remote/environment.json": "e37c22e1aba5e54fae6d79f7917603d2815db7149a8b79eab7eb1d6a312ee046",
+    "remote/fusion_result.json": "0f075944598fddf47dc9bd0dc4fe8eefb26f5ffca23df31ea327712bc91ce159",
+    "remote/graph-npu.json": "8ab06a8cce113bbf8c741a7f520faee5502d56e70a9754a159b2dd05a21c3063",
+    "remote/graph-smoke.json": "b512b0df89aa2733a66030f085408c042849780ea1c91b14eee6cc06d0f3ac77",
+    "remote/hccl-rank0.json": "4a43c2ced722aa7e2ed9b379570347a52b0f2e3ddd6b8d2976b92141a90a6d95",
+    "remote/hccl-rank1.json": "2c5ab73ce912b7f2fe9fc3d28482c95aed9d3cf2a05784fb2a1ea0ad0d2d2f94",
+    "remote/launch.sh": "eade88807c569bdfa13c8424d3c982c465d097daa70ced10cfddc2752f939739",
+    "remote/logs/eager.log": "fceba0dbff56f716d65707605eb43a96efe1fe00666967352cf587beee8ae580",
+    "remote/logs/graph.log": "d5629a4edc4ef6a8e7ce07329fdd0ce3ecc2165bee59e1e7ddb308742d0bae82",
+    "remote/logs/hccl.log": "cfb7f1f9e9d8a9ea815a53aa1eaea187ace585195f7153c1589d7ca32739118e",
+    "remote/restored-original-smoke.json": "ca71d87ecd2f3baaf88aedf4398260cc89153d111cb689d8357129d2b7df0c74",
+    "remote/source.json": "8f0b487c43d38098312221cdbde4ffe45c1230f2d601160fe159e3b639b8de85",
+    "remote/status.json": "0574904ab425a154f2ccbb39dbaee8485d02779f1a6d31cf7027cb5efaa27ae9",
+    "thermal.jsonl": "bf78e86589f095df06d16d1f2186568fe47dbe5fd5622940520e9cf401983672"
+  },
+  "passed": true
+}

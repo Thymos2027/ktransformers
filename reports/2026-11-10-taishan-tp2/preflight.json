@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-10T21:40:36+08:00",
+  "phase": "source_support_required",
+  "target": "one DeepSeek-V4-Flash instance, TP=2, EP=1, two Ascend 910B4-1 NPUs",
+  "remote_mutations_performed": false,
+  "model_launch_attempted": false,
+  "sglang_commit": "ff46d660d16cbf11ef393c80cc6b3ab7f6259780",
+  "sglang_tracked_diff": "empty",
+  "wrapper_path": "/data/deploy/dsv4-20261104/sources/sglang/python/sglang/srt/layers/moe/kt_ep_wrapper.py",
+  "wrapper_sha256": "ac454c4aa5410181625a8c9aa520b7c18b6ab210e2706586e0fc7d64aad4dd8f",
+  "tp_guard_lines": [180, 184],
+  "tp_guard_message": "KT expert offload on NPU currently supports only --tensor-parallel-size 1 and --expert-parallel-size 1",
+  "npu_topology": {
+    "2_to_5": "SYS",
+    "npu2_cpu_affinity": "0-31",
+    "npu5_cpu_affinity": "64-95",
+    "hccl_collective_validated": false
+  },
+  "preflight_snapshot": {
+    "npu2_health": "OK",
+    "npu5_health": "OK",
+    "npu2_temperature_c": 57,
+    "npu5_temperature_c": 57,
+    "original_container": "dsv4-kt-20261104",
+    "original_container_state": "running",
+    "original_container_restart_policy": "no",
+    "npu5_model_processes": false
+  },
+  "w8a8_checkpoint_bytes": 294635333768,
+  "combined_hbm_gib": 128,
+  "cpu_expert_offload_required_for_current_weights": true
+}
