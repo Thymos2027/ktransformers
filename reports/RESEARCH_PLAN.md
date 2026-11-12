@@ -1,6 +1,8 @@
 # taishan：KT + SGLang 可复现验证研究计划
 
-更新：2026-11-11（北京时间）。状态见[研究状态](RESEARCH_STATUS.md)，既有证据见[阶段成果](RESEARCH_OUTCOMES.md)。各阶段是否完成以结果报告为准。
+更新：2026-11-12（北京时间）。状态见[研究状态](RESEARCH_STATUS.md)，既有证据见[阶段成果](RESEARCH_OUTCOMES.md)。各阶段是否完成以结果报告为准。
+
+下一方向为 [TP2 数值与代表性任务验证](2026-11-12-taishan-tp-correctness/experiment-plan.md)：先在固定 token 历史下比较 TP1/TP2 及 eager/图模式，定位首个数值分歧，再做独立任务质量对照，为范围明确的 opt-in 支持候选准备证据。当前只有本地方案，采集器、阈值和正式任务集尚待冻结，未启动远端实验。
 
 用户指定的[单模型双 NPU TP=2 部署验证](2026-11-10-taishan-tp2/REVIEW.md)与[固定条件速度对照](2026-11-11-taishan-tp-speed/REVIEW.md)均已完成。隔离候选通过 HCCL、eager 和 decode 图模式短请求；ABBA 24 条正式请求测得 TP2 的 decode 中位数高 3.37%/2.23%，总时长少 2.87%/1.55%。跨 TP 输出不同且各配置仅两次独立启动，只报告同输入同长度负载的小幅观察提升。固定基线保持原 TP=1，原服务已恢复。
 
