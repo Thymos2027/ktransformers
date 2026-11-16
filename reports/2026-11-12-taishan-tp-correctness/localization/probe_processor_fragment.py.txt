@@ -1,0 +1,120 @@
+class KTFrozenHistoryProbe(CustomLogitProcessor):
+    """Capture pre-mask logits and force one request's frozen token history."""
+
+    def __call__(self, logits, custom_param_list=None):
+        import hashlib
+        import os
+        from pathlib import Path
+        import re
+
+        if custom_param_list is None or logits.ndim != 2:
+            raise RuntimeError("KT probe requires a two-dimensional logits batch")
+        if torch.distributed.is_initialized():
+            rank = torch.distributed.get_rank()
+        else:
+            rank = 0
+        for i, params in enumerate(custom_param_list):
+            if params is None or "kt_forced_ids" not in params:
+                raise RuntimeError("KT probe request is missing frozen ids")
+            req = params["__req__"]
+            ids = params["kt_forced_ids"]
+            prompt_len = len(req.origin_input_ids)
+            seq_len = params["__kt_probe_seq_len__"]
+            step = seq_len - prompt_len
+            rid = str(req.rid)
+            if not re.fullmatch(r"[a-zA-Z0-9_-]+", rid):
+                raise RuntimeError("Unsafe KT probe request id")
+            if step < 0:
+                # Chunked prefill can invoke the sampler on an unfinished
+                # prompt; its sampled token is discarded by the scheduler.
+                mode = params.get("__kt_probe_mode__")
+                if mode not in ("EXTEND", "MIXED") or seq_len <= 0:
+                    raise RuntimeError("KT probe invalid partial prefill")
+                root = Path(os.environ["KT_PROBE_DIR"])
+                root.mkdir(parents=True, exist_ok=True)
+                with (root / f"rank{rank}-partial.jsonl").open("a", encoding="utf-8") as stream:
+                    stream.write(json.dumps({
+                        "rid": rid, "rank": rank, "seq_len": seq_len,
+                        "prompt_len": prompt_len, "mode": mode,
+                        "scheduler_history_len": len(req.output_ids),
+                    }, sort_keys=True) + "\n")
+                    stream.flush()
+                continue
+            if step > len(ids):
+                # Overlap scheduling can launch an extra forward while the final
+                # sampled token is still waiting for finish-state processing.
+                root = Path(os.environ["KT_PROBE_DIR"])
+                root.mkdir(parents=True, exist_ok=True)
+                with (root / f"rank{rank}-extra.jsonl").open("a", encoding="utf-8") as stream:
+                    stream.write(json.dumps({
+                        "rid": rid, "rank": rank, "step": step,
+                        "prompt_len": prompt_len, "seq_len": seq_len,
+                        "mode": params.get("__kt_probe_mode__"),
+                        "decode_input_id": params.get("__kt_probe_input_id__"),
+                        "scheduler_history_len": len(req.output_ids),
+                    }, sort_keys=True) + "\n")
+                    stream.flush()
+                continue
+            scheduler_history = list(req.output_ids)
+            if scheduler_history != list(ids[:len(scheduler_history)]):
+                raise RuntimeError("KT probe token history diverged from frozen ids")
+            if len(scheduler_history) > step:
+                raise RuntimeError("KT probe scheduler history is ahead of model position")
+            input_id = params.get("__kt_probe_input_id__")
+            if step > 0 and input_id != int(ids[step - 1]):
+                raise RuntimeError("KT probe decode input differs from frozen history")
+            raw = logits[i].detach()
+            raw_fp32 = raw.float().cpu().contiguous()
+            logits_sha256 = hashlib.sha256(raw_fp32.numpy().tobytes()).hexdigest()
+            root = Path(os.environ["KT_PROBE_DIR"])
+            root.mkdir(parents=True, exist_ok=True)
+            log_path = root / f"rank{rank}.jsonl"
+            prior = []
+            if log_path.exists():
+                prior = [json.loads(line) for line in log_path.read_text(
+                    encoding="utf-8").splitlines() if line]
+            call_for_position = sum(
+                1 for row in prior if row["rid"] == rid and row["step"] == step
+            )
+            if params.get("kt_capture", True):
+                suffix = "" if call_for_position == 0 else f"-call{call_for_position}"
+                prefix = root / f"{rid}-rank{rank}-step{step:03d}{suffix}"
+                target = prefix.with_suffix(".pt")
+                if target.exists():
+                    raise RuntimeError(f"Duplicate KT probe capture: {target}")
+                temp = prefix.with_suffix(".tmp")
+                torch.save(raw.cpu(), temp)
+                os.replace(temp, target)
+            meta = {
+                "rid": rid,
+                "rank": rank,
+                "step": step,
+                "mode": params.get("__kt_probe_mode__"),
+                "graph_replay": params.get("__kt_probe_graph_replay__"),
+                "seq_len": params.get("__kt_probe_seq_len__"),
+                "prompt_len": prompt_len,
+                "decode_input_id": input_id,
+                "scheduler_history_len": len(scheduler_history),
+                "call_for_position": call_for_position,
+                "dtype": str(raw.dtype),
+                "vocab_size": int(raw.numel()),
+                "logits_fp32_sha256": logits_sha256,
+                "capture": bool(params.get("kt_capture", True)),
+                "forced_token": int(ids[step]) if step < len(ids) else None,
+                "scheduler_history_sha256": hashlib.sha256(
+                    json.dumps(scheduler_history, separators=(",", ":")).encode()
+                ).hexdigest(),
+                "model_history_sha256": hashlib.sha256(
+                    json.dumps(ids[:step], separators=(",", ":")).encode()
+                ).hexdigest(),
+            }
+            with log_path.open("a", encoding="utf-8") as stream:
+                stream.write(json.dumps(meta, sort_keys=True) + "\n")
+                stream.flush()
+            if step < len(ids):
+                token = int(ids[step])
+                if not 0 <= token < raw.numel():
+                    raise RuntimeError("Frozen token out of vocabulary")
+                logits[i].fill_(-float("inf"))
+                logits[i, token] = 0.0
+        return logits
