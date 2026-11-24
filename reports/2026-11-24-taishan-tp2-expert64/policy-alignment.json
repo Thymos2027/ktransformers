@@ -1,0 +1,21 @@
+{
+  "thermal_policy": {
+    "temperature_limit_c": 90,
+    "temperature_comparison": ">=",
+    "temperature_hold_seconds": 10,
+    "max_sample_gap_seconds": 15,
+    "fan_control": "existing Taishan-NpuCooling service; read only"
+  },
+  "cooling_service_status": "C:\\Users\\tobeo\\AppData\\Local\\taishan\\npu-cooling\\status.json",
+  "cooling_pid": 7468,
+  "cooling_source_sha256": {
+    "service_daemon.py": "b4dedd781c924d8086a4e7e4bf8a741c56a725c798787222102072094d90c646",
+    "controller.py": "bbb23664a6f8348d6707c6643c3dbde7406eb94cfc390b12ed993765b4f0154b"
+  },
+  "reference_sources": {
+    "E:\\Coder\\vibe-coding\\taishan\\ascendbench\\benchmarks\\run_qwen38_baseline.py": "342c6bb8c2be7701830dd512d06649fddd9de65be1e87267376caac0bb2dc86a",
+    "E:\\Coder\\vibe-coding\\taishan\\ascendbench\\tools\\launch_qwen36_graph_baseline.py": "6c2370947a21f5ef589884065b5ad66b9eced207a23af0ac77f803e86e34a835",
+    "E:\\Coder\\vibe-coding\\taishan\\services\\npu-cooling\\service_daemon.py": "b4dedd781c924d8086a4e7e4bf8a741c56a725c798787222102072094d90c646"
+  },
+  "local_thermal_tests_passed": 13
+}
