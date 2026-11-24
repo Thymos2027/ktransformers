@@ -18,6 +18,7 @@
 
 | 日期 | 报告 | 已验证的范围 |
 | --- | --- | --- |
+| 2026-11-24 | [注意力TP1与MoE EP2/TP1诊断](2026-11-24-taishan-attn-tp1-ep2/REVIEW_DIAGNOSTIC.md) | 部署通过；原JSON题在eager/graph、DP0/1均稳定失败，控制题16/16通过，质量未验收、未采集性能 |
 | 2026-11-24 | [EP2每卡32个不同完整专家](2026-11-24-taishan-ep2-expert64/REVIEW.md) | 驻留、图重放、短题及6条正式请求通过；相对TP2/K64，decode低1.2%–2.0%，HBM基本一致；数值/质量待验收 |
 | 2026-11-24 | [TP2 / K64 部署与同负载对照](2026-11-24-taishan-tp2-expert64/REVIEW.md) | 18 条正式请求通过；相对 TP2/K32，K64 首 token 快 7.5%–9.3%、decode 慢 1.2%–1.5%，每卡多约 16.16 GiB；数值/质量待验收 |
 | 2026-11-04 | [DeepSeek-V4-Flash 部署与验收](2026-11-04-taishan-deepseek-v4-flash/README.md) | 单张 910B4-1、单请求、8192 token；图捕获、健康检查、短聊天与流式结束通过 |
