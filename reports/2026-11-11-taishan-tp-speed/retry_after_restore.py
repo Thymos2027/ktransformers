@@ -13,7 +13,8 @@ import requests
 
 
 HERE = Path(__file__).resolve().parent
-RUN = HERE / "runs" / "retry-graph-check-controller"
+RUN = HERE / "runs" / (dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).strftime("%Y%m%d-%H%M%S")
+                       + "-retry-graph-check-controller")
 PREVIOUS = HERE / "runs" / "speed-20261111-first" / "status.json"
 NEXT_ID = "speed-20261111-graph-check"
 
@@ -28,6 +29,7 @@ def status(phase, **fields):
 
 
 def main():
+    global NEXT_ID
     RUN.mkdir(parents=True, exist_ok=False)
     status("waiting_for_previous_restoration")
     session = requests.Session()
@@ -48,6 +50,7 @@ def main():
             time.sleep(10)
         else:
             raise TimeoutError("Previous controller did not finish restoration in 40 minutes")
+        NEXT_ID = "speed-" + dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).strftime("%Y%m%d-%H%M%S") + "-graph-check"
         if (HERE / "runs" / NEXT_ID).exists():
             raise RuntimeError("New run already exists; preserve its evidence")
         status("launching_fixed_benchmark")

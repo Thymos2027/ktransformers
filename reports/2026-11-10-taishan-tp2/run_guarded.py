@@ -27,6 +27,20 @@ def now():
     return dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat()
 
 
+def make_run_id(label, started=None):
+    """Include a second-resolution Beijing timestamp in every new run name."""
+    if not re.fullmatch(r"[a-z0-9-]+", label):
+        raise ValueError("run-id must contain lowercase letters, digits or hyphens")
+    if re.search(r"(?:^|-)\d{8}-\d{6}(?:-|$)", label):
+        return label
+    timezone = dt.timezone(dt.timedelta(hours=8))
+    started = started or dt.datetime.now(timezone)
+    stamp = started.astimezone(timezone).strftime("%Y%m%d-%H%M%S")
+    if re.search(r"(?<!\d)\d{8}(?!\d)", label):
+        return re.sub(r"(?<!\d)\d{8}(?!\d)", stamp, label, count=1)
+    return stamp + "-" + label
+
+
 def atomic(path, value):
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -110,11 +124,13 @@ def collect():
 def main():
     global RUN, REMOTE, NAMES
     parser = argparse.ArgumentParser()
-    parser.add_argument("--run-id", default="20261111-first")
+    parser.add_argument("--run-id", default="first",
+                        help="Run label; adds YYYYMMDD-HHMMSS in Asia/Shanghai when absent")
     parser.add_argument("--resume-stopped-baseline", action="store_true")
     args = parser.parse_args()
     if not re.fullmatch(r"[a-z0-9-]+", args.run_id):
         parser.error("run-id must contain lowercase letters, digits or hyphens")
+    args.run_id = make_run_id(args.run_id)
     RUN = HERE / "runs" / args.run_id
     REMOTE = "/data/deploy/dsv4-tp2-" + args.run_id
     NAMES = [f"dsv4-tp2-{args.run_id}-{mode}" for mode in CONTAINER_PHASES]

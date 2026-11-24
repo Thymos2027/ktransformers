@@ -72,11 +72,13 @@ def heartbeat_status(timeout):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--run-id', required=True)
+    parser.add_argument('--run-id', required=True,
+                        help='Run label; adds YYYYMMDD-HHMMSS in Asia/Shanghai when absent')
     parser.add_argument('--resume-from')
     args = parser.parse_args()
     if not re.fullmatch(r'[a-z0-9-]+', args.run_id):
         parser.error('run-id must contain lowercase letters, digits or hyphens')
+    args.run_id = helpers.make_run_id(args.run_id)
     if args.resume_from and not re.fullmatch(r'/data/deploy/dsv4-tp2-[a-z0-9-]+', args.resume_from):
         parser.error('resume-from must be an existing trial directory under /data/deploy')
     helpers.RUN = HERE / 'runs' / args.run_id
