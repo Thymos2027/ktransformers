@@ -4,6 +4,8 @@
 
 ## 2026-11-25 性能主线
 
+追加回查更正：DP graph/792输入中DP0预热与正式两条高速记录的正文均仅为 `This`，虽然计数为512 token。不能作为正常回答达到17 tok/s的证据；原三次汇总包含一条正式异常样本，保留原值并标注。请求使用ignore_eos=True，默认跳过特殊token，但原始输出IDs未保存，无法确认特殊token或输出链路中的具体原因。详见[报告更正](2026-11-25-taishan-performance/REVIEW.md)，未新启动实验。
+
 五阶段性能矩阵已完成并回读，见[结果报告](2026-11-25-taishan-performance/REVIEW.md)。48条请求含36条正式/12条预热；TP2/EP2短输入decode约15.5 tok/s、TPOT约64.4–64.6ms，DP-attention graph中位约11.4 tok/s、87–88ms，eager约2.7 tok/s。792输入的DP0有约17 tok/s、DP1约11.4 tok/s且输出不同，分rank记录保留；不作普遍rank速度结论。两种拓扑1k/4k/7k prefill均约83–87 tok/s，7k首token等待约83秒。已验证7168输入+64输出，不代表最大上下文或更大模型容量。
 
 首轮profiler停止触发107020，之后复用已完成DP阶段16条记录、新跑32条；跨运行顺序比较限制保留，trace未验收。81项远端证据及4个实际部署源码SHA一致，容器、端口和NPU进程清理通过，原单卡服务保持停止。下一项建议优先测匹配版本的streaming/layerwise prefill，再按轻量计时选择CPU/NUMA或热专家放置；未自动启动新任务。

@@ -1,5 +1,7 @@
 # TaiShan 双卡性能与 prefill 扩展
 
+追加更正：DP0/792输入的16.85/17.01 tok/s两条记录虽有512个token计数，正文均只有 `This`。它们是输出异常下的计数吞吐，不能作为正常回答速度；详见[结果报告中的更正](REVIEW.md)。原始数据及三次中位数保留，不静默剔除。
+
 2026-11-25 继续轮 `performance-20261125-113036-profiler-resume` 已完成并独立回读，见[结果报告](REVIEW.md)。48条请求中36条正式、12条预热完整；TP2/EP2短负载decode约15.5 tok/s，DP-attention graph中位数约11.4 tok/s。两种拓扑的1k/4k/7k prefill均约83–87 tok/s，7k首token等待约83秒。DP0的792输入另有17 tok/s记录，分rank输出和速度差异保留，不能只报合并中位数。
 
 首轮profiler自动停止触发107020，见[故障复盘](REVIEW_FIRST.md)。继续轮校验后复用先完成的16条请求，新跑其余32条；正式性能流程关闭profiler，trace未验收。81项远端证据和4个部署源码哈希核对通过，容器与端口已清理，原服务保持停止。完整参数见[experiment-plan.md](experiment-plan.md)。

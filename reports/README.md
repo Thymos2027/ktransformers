@@ -2,6 +2,8 @@
 
 更新：2026-11-25（北京时间）。本目录记录鲲鹏 920 + Ascend 910B 上的 KTransformers（KT）与 SGLang 联合验证。各报告中的“当前”只代表记录时的状态；服务是否仍在运行需要另行核查。
 
+追加更正：[11月25日报告](2026-11-25-taishan-performance/REVIEW.md)中的DP0/792输入高速记录，512个输出token计数对应的正文实际仅为 `This`。17 tok/s不能当作正常回答速度，原始记录保留为输出完整性异常；原因需区分特殊token生成和输出链路问题。
+
 按用户性能目标完成[双卡TTFT/TPOT与prefill扩展](2026-11-25-taishan-performance/REVIEW.md)：36条正式请求回读通过；TP2/EP2短负载decode约15.5 tok/s，DP-attention graph中位数约11.4 tok/s，另有DP0/792输入约17 tok/s的分组差异。两种拓扑1k/4k/7k prefill均约83–87 tok/s，7k首token约83秒。profiler因首轮107020暂缓，容器清理通过；未启动后续实验。
 
 [EP2不同专家实验](2026-11-24-taishan-ep2-expert64/REVIEW.md)已完成回读：NPU2放0–31、NPU5放32–63的完整专家，CPU计算64–255，注意力保留TP2。驻留、图重放、短题及6条正式请求通过；相对此前TP2/K64，decode低1.2%–2.0%，HBM基本一致，未观察到加速；数值与任务质量待验收。
