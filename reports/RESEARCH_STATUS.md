@@ -1,6 +1,14 @@
 # taishan 研究状态
 
-更新：2026-11-24（北京时间）。最新回读见下节；后文保留 11 月 12 日的历史判断和归档表，其“当前”仅代表当时状态。执行顺序与验收口径见[研究计划](RESEARCH_PLAN.md)，成果边界见[阶段成果](RESEARCH_OUTCOMES.md)。
+更新：2026-11-25（北京时间）。最新工作见下节；后文保留历史判断和归档表，其“当前”仅代表当时状态。执行顺序与验收口径见[研究计划](RESEARCH_PLAN.md)，成果边界见[阶段成果](RESEARCH_OUTCOMES.md)。
+
+## 2026-11-25 性能主线
+
+五阶段性能矩阵已完成并回读，见[结果报告](2026-11-25-taishan-performance/REVIEW.md)。48条请求含36条正式/12条预热；TP2/EP2短输入decode约15.5 tok/s、TPOT约64.4–64.6ms，DP-attention graph中位约11.4 tok/s、87–88ms，eager约2.7 tok/s。792输入的DP0有约17 tok/s、DP1约11.4 tok/s且输出不同，分rank记录保留；不作普遍rank速度结论。两种拓扑1k/4k/7k prefill均约83–87 tok/s，7k首token等待约83秒。已验证7168输入+64输出，不代表最大上下文或更大模型容量。
+
+首轮profiler停止触发107020，之后复用已完成DP阶段16条记录、新跑32条；跨运行顺序比较限制保留，trace未验收。81项远端证据及4个实际部署源码SHA一致，容器、端口和NPU进程清理通过，原单卡服务保持停止。下一项建议优先测匹配版本的streaming/layerwise prefill，再按轻量计时选择CPU/NUMA或热专家放置；未自动启动新任务。
+
+用户指定以推理性能和有限资源容量为主，固定token数值定位降为可选诊断。JSON格式问题作为内容观察保留，不再挡住性能测量。方案与数据口径见[实验计划](2026-11-25-taishan-performance/experiment-plan.md)，结果与原始证据入口见[运行说明](2026-11-25-taishan-performance/README.md)。
 
 ## 2026-11-24 当前回读
 

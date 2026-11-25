@@ -1,6 +1,14 @@
 # taishan：KT + SGLang 可复现验证研究计划
 
-更新：2026-11-12（北京时间）。状态见[研究状态](RESEARCH_STATUS.md)，既有证据见[阶段成果](RESEARCH_OUTCOMES.md)。各阶段是否完成以结果报告为准。
+更新：2026-11-25（北京时间）。状态见[研究状态](RESEARCH_STATUS.md)，既有证据见[阶段成果](RESEARCH_OUTCOMES.md)。各阶段是否完成以结果报告为准。
+
+## 2026-11-25 用户指定的研究主线
+
+优先研究TTFT、TPOT、prefill/decode速度，以及有限RAM/HBM下可运行的模型和上下文容量。固定token历史定位降为可选诊断，不作为性能实验前置。短功能观察与性能分别报告，JSON格式不符保留结果但不阻止测量；运行/通信异常、空输出、缺失token或计时数据仍停止。
+
+已完成[双卡性能与prefill容量扩展实验](2026-11-25-taishan-performance/REVIEW.md)：补齐attention TP1/DP2的eager/graph、当日attention TP2/EP2对照，并用独立宽prefill配置测完1k/4k/7k输入。原生token流测TTFT/TPOT，服务端prefill墙钟区间单独报告；短CPU/NPU时间线因profiler停止触发107020暂缓。下一步优先验证streaming/layerwise prefill，再按实测选择CPU/NUMA、静态热专家或计算重叠，并研究更大模型容量；未自动启动新任务。较早计划保留于下文，涉及强制数值定位前置的要求由本节用户目标更新。
+
+## 2026-11-12 历史计划
 
 下一方向为 [TP2 数值与代表性任务验证](2026-11-12-taishan-tp-correctness/experiment-plan.md)：先在固定 token 历史下比较 TP1/TP2 及 eager/图模式，定位首个数值分歧，再做独立任务质量对照，为范围明确的 opt-in 支持候选准备证据。当前只有本地方案，采集器、阈值和正式任务集尚待冻结，未启动远端实验。
 

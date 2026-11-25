@@ -1,6 +1,8 @@
 # taishan 研究与实验报告
 
-更新：2026-11-24（北京时间）。本目录记录鲲鹏 920 + Ascend 910B 上的 KTransformers（KT）与 SGLang 联合验证。各报告中的“当前”只代表记录时的状态；服务是否仍在运行需要另行核查。
+更新：2026-11-25（北京时间）。本目录记录鲲鹏 920 + Ascend 910B 上的 KTransformers（KT）与 SGLang 联合验证。各报告中的“当前”只代表记录时的状态；服务是否仍在运行需要另行核查。
+
+按用户性能目标完成[双卡TTFT/TPOT与prefill扩展](2026-11-25-taishan-performance/REVIEW.md)：36条正式请求回读通过；TP2/EP2短负载decode约15.5 tok/s，DP-attention graph中位数约11.4 tok/s，另有DP0/792输入约17 tok/s的分组差异。两种拓扑1k/4k/7k prefill均约83–87 tok/s，7k首token约83秒。profiler因首轮107020暂缓，容器清理通过；未启动后续实验。
 
 [EP2不同专家实验](2026-11-24-taishan-ep2-expert64/REVIEW.md)已完成回读：NPU2放0–31、NPU5放32–63的完整专家，CPU计算64–255，注意力保留TP2。驻留、图重放、短题及6条正式请求通过；相对此前TP2/K64，decode低1.2%–2.0%，HBM基本一致，未观察到加速；数值与任务质量待验收。
 
@@ -18,6 +20,7 @@
 
 | 日期 | 报告 | 已验证的范围 |
 | --- | --- | --- |
+| 2026-11-25 | [双卡性能与prefill容量扩展](2026-11-25-taishan-performance/REVIEW.md) | 36条正式请求回读；TP2/EP2约15.5、DP graph中位约11.4 tok/s；prefill约83–87 tok/s，7168输入+64输出通过；trace暂缓 |
 | 2026-11-24 | [注意力TP1与MoE EP2/TP1诊断](2026-11-24-taishan-attn-tp1-ep2/REVIEW_DIAGNOSTIC.md) | 部署通过；原JSON题在eager/graph、DP0/1均稳定失败，控制题16/16通过，质量未验收、未采集性能 |
 | 2026-11-24 | [EP2每卡32个不同完整专家](2026-11-24-taishan-ep2-expert64/REVIEW.md) | 驻留、图重放、短题及6条正式请求通过；相对TP2/K64，decode低1.2%–2.0%，HBM基本一致；数值/质量待验收 |
 | 2026-11-24 | [TP2 / K64 部署与同负载对照](2026-11-24-taishan-tp2-expert64/REVIEW.md) | 18 条正式请求通过；相对 TP2/K32，K64 首 token 快 7.5%–9.3%、decode 慢 1.2%–1.5%，每卡多约 16.16 GiB；数值/质量待验收 |
