@@ -2,11 +2,13 @@
 
 更新：2026-11-25（北京时间）。状态见[研究状态](RESEARCH_STATUS.md)，既有证据见[阶段成果](RESEARCH_OUTCOMES.md)。各阶段是否完成以结果报告为准。
 
+23:30完成[单卡streaming prefill对照回读](2026-11-25-taishan-prefill-streaming/REVIEW.md)，运行编号`prefill-20261125-224217-first`。TP1/EP1/K32同机4K/7K TTFT约52.85/91.85→19.75/20.11秒，1K退化，decode及HBM也有代价。下一步优先补1K–2K长度切换边界、分离动态驻留与侧流、轻量诊断streaming后decode及固定搬运/转换成本；再核算峰值容量与长输出。本次只回读，未启动新任务。
+
 ## 2026-11-25 用户指定的研究主线
 
 优先研究TTFT、TPOT、prefill/decode速度，以及有限RAM/HBM下可运行的模型和上下文容量。固定token历史定位降为可选诊断，不作为性能实验前置。短功能观察与性能分别报告，JSON格式不符保留结果但不阻止测量；运行/通信异常、空输出、缺失token或计时数据仍停止。
 
-已完成[双卡性能与prefill容量扩展实验](2026-11-25-taishan-performance/REVIEW.md)：补齐attention TP1/DP2的eager/graph、当日attention TP2/EP2对照，并用独立宽prefill配置测完1k/4k/7k输入。原生token流测TTFT/TPOT，服务端prefill墙钟区间单独报告；短CPU/NPU时间线因profiler停止触发107020暂缓。下一步优先验证streaming/layerwise prefill，再按实测选择CPU/NUMA、静态热专家或计算重叠，并研究更大模型容量；未自动启动新任务。较早计划保留于下文，涉及强制数值定位前置的要求由本节用户目标更新。
+已完成[双卡性能与prefill容量扩展实验](2026-11-25-taishan-performance/REVIEW.md)：补齐attention TP1/DP2的eager/graph、当日attention TP2/EP2对照，并用独立宽prefill配置测完1k/4k/7k输入。随后[单卡streaming对照](2026-11-25-taishan-prefill-streaming/REVIEW.md)确认长prefill收益及短输入、decode、HBM代价。原生token流测TTFT/TPOT，服务端prefill墙钟区间单独报告；短CPU/NPU时间线因profiler停止触发107020暂缓。下一步先按本节开头补长度切换与decode/搬运诊断，再研究更大模型容量；未自动启动新任务。较早计划保留于下文，涉及强制数值定位前置的要求由本节用户目标更新。
 
 ## 2026-11-12 历史计划
 

@@ -2,6 +2,8 @@
 
 更新：2026-11-25（北京时间）。本目录记录鲲鹏 920 + Ascend 910B 上的 KTransformers（KT）与 SGLang 联合验证。各报告中的“当前”只代表记录时的状态；服务是否仍在运行需要另行核查。
 
+23:30完成[单卡streaming prefill回读](2026-11-25-taishan-prefill-streaming/REVIEW.md)：36正式+12预热，4K TTFT约52.85→19.75秒、7K约91.85→20.11秒；1K退化，长输入后decode下降、请求后HBM约48.7→59.7GiB。真实streaming、原始输出IDs和清理通过；完整质量与decode退化原因未验收，没有启动下一轮。此前双卡结果保留于下文。
+
 追加更正：[11月25日报告](2026-11-25-taishan-performance/REVIEW.md)中的DP0/792输入高速记录，512个输出token计数对应的正文实际仅为 `This`。17 tok/s不能当作正常回答速度，原始记录保留为输出完整性异常；原因需区分特殊token生成和输出链路问题。
 
 按用户性能目标完成[双卡TTFT/TPOT与prefill扩展](2026-11-25-taishan-performance/REVIEW.md)：36条正式请求回读通过；TP2/EP2短负载decode约15.5 tok/s，DP-attention graph中位数约11.4 tok/s，另有DP0/792输入约17 tok/s的分组差异。两种拓扑1k/4k/7k prefill均约83–87 tok/s，7k首token约83秒。profiler因首轮107020暂缓，容器清理通过；未启动后续实验。
@@ -22,6 +24,7 @@
 
 | 日期 | 报告 | 已验证的范围 |
 | --- | --- | --- |
+| 2026-11-25 | [单卡streaming prefill对照](2026-11-25-taishan-prefill-streaming/REVIEW.md) | 36正式请求；同机4K/7K TTFT快2.68/4.57倍，1K及decode有代价，HBM约59.7GiB；真实streaming及清理通过 |
 | 2026-11-25 | [双卡性能与prefill容量扩展](2026-11-25-taishan-performance/REVIEW.md) | 36条正式请求回读；TP2/EP2约15.5、DP graph中位约11.4 tok/s；prefill约83–87 tok/s，7168输入+64输出通过；trace暂缓 |
 | 2026-11-24 | [注意力TP1与MoE EP2/TP1诊断](2026-11-24-taishan-attn-tp1-ep2/REVIEW_DIAGNOSTIC.md) | 部署通过；原JSON题在eager/graph、DP0/1均稳定失败，控制题16/16通过，质量未验收、未采集性能 |
 | 2026-11-24 | [EP2每卡32个不同完整专家](2026-11-24-taishan-ep2-expert64/REVIEW.md) | 驻留、图重放、短题及6条正式请求通过；相对TP2/K64，decode低1.2%–2.0%，HBM基本一致；数值/质量待验收 |
