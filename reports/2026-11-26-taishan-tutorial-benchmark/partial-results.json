@@ -1,0 +1,40 @@
+{
+  "run": "tutorial-20261126-111251-swa-audit-fix",
+  "complete_matrix": false,
+  "formal_requests": 12,
+  "warmup_requests": 4,
+  "groups": [
+    {
+      "target": 130,
+      "prompt_tokens": 118,
+      "requests": 3,
+      "public_prefill_mean": 4.347013016677617,
+      "public_decode_median": 8.511468096131862,
+      "content_anomalies": 0
+    },
+    {
+      "target": 1000,
+      "prompt_tokens": 801,
+      "requests": 3,
+      "public_prefill_mean": 19.13491899667618,
+      "public_decode_median": 10.712972707579153,
+      "content_anomalies": 0
+    },
+    {
+      "target": 4000,
+      "prompt_tokens": 3944,
+      "requests": 3,
+      "public_prefill_mean": 19.578841616671223,
+      "public_decode_median": 9.904032663703969,
+      "content_anomalies": 0
+    },
+    {
+      "target": 8000,
+      "prompt_tokens": 7823,
+      "requests": 3,
+      "public_prefill_mean": 20.26131899334723,
+      "public_decode_median": 9.383231846078004,
+      "content_anomalies": 0
+    }
+  ]
+}

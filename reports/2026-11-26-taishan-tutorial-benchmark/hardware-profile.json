@@ -1,0 +1,13 @@
+{
+  "mode": "hardware-long",
+  "phases": {"hardwarelong": [16000, 32000]},
+  "settings": {
+    "experts": 28,
+    "mem_fraction": 0.775,
+    "swa_ratio": 0.5,
+    "max_total_tokens": 73728
+  },
+  "source_run": "tutorial-20261126-111251-swa-audit-fix",
+  "reuse_previous_measurements": false,
+  "purpose": "Measure missing long-input cases with explicit hardware-adjusted capacity"
+}

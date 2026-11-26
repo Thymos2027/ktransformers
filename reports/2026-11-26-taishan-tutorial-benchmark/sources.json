@@ -1,0 +1,18 @@
+[
+  {
+    "repo": "kvcache-ai/ktransformers",
+    "commit": "a1650757e93a06ebac35148f76a71502c205706d",
+    "path": "doc/en/DeepSeek-V4-Flash_tutorial_for_Ascend_NPU.md",
+    "url": "https://raw.githubusercontent.com/kvcache-ai/ktransformers/a1650757e93a06ebac35148f76a71502c205706d/doc/en/DeepSeek-V4-Flash_tutorial_for_Ascend_NPU.md",
+    "file": "tutorial.md",
+    "sha256": "b0bb2f9b70abe2597011d92b13e0ab0c9e93a4697043e1d239256be8e9ef22ea"
+  },
+  {
+    "repo": "hicann/cann-recipes-infer",
+    "commit": "e44629aa83102e56821b14b2db2416fb39e6164c",
+    "path": "integration/sglang/dsv4-flash-single-npu-moe-offload/scripts/tools/decode_throughput_test.sh",
+    "url": "https://raw.githubusercontent.com/hicann/cann-recipes-infer/e44629aa83102e56821b14b2db2416fb39e6164c/integration/sglang/dsv4-flash-single-npu-moe-offload/scripts/tools/decode_throughput_test.sh",
+    "file": "decode_throughput_test.upstream.sh",
+    "sha256": "011b3f0498f2f9e7cbab583431edcc52fdf23e096be5b360a2bbaf2d83c85c08"
+  }
+]

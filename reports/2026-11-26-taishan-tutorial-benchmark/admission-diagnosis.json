@@ -1,0 +1,16 @@
+{
+  "run": "tutorial-20261126-111251-swa-audit-fix",
+  "method": "AST-isolated original admission prefix and SWA budget methods; no NPU execution",
+  "source_file": "schedule_policy-source.py",
+  "prompt_tokens": 15568,
+  "output_tokens": 1000,
+  "page_size": 128,
+  "chunk_size": 32768,
+  "full_pool": 40832,
+  "swa_pool": 14208,
+  "required_swa_slots": 15696,
+  "admission_result": "NO_TOKEN",
+  "counterfactual_swa_pool": 16000,
+  "counterfactual_initial_gate": "passed_initial_capacity_gates",
+  "note": "Counterfactual checks scheduler capacity only, not hardware feasibility or model execution"
+}

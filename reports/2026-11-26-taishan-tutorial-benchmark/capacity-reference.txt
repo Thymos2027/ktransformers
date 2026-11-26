@@ -1,0 +1,3 @@
+[2026-11-26 06:34:59] DSV4 pool sizes: full=120192, swa=60032, c4=30048, c128=939, c4_state=3752, c128_state=0
+[2026-11-26 06:34:59] DSV4 pool sizes: full=73728, swa=36864, c4=18432, c128=576, c4_state=2304, c128_state=0
+[2026-11-26 06:34:59] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=1 swa_size=36864 c4_size=18432 c4_logical_size=18432 c128_size=576 c4_state_pool_size=256 c128_state_pool_size=384
